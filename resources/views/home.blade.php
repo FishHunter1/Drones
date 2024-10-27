@@ -31,7 +31,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center text-center ftco-vh-100">
           <div class="col-md-10">
-            <h1 class="ftco-heading ftco-animate">No se que poner luego lo cambio</h1>
+            <h1 class="ftco-heading ftco-animate">Gestiona tus flotas vehiculares!</h1>
             <p class="nav-item">
                 <a href="#section-services" class="btn btn-primary ftco-animate">Comenzar</a>
             </p>
@@ -41,7 +41,7 @@
     </section>
 
 
-
+    
     <section class="ftco-section bg-light  ftco-slant ftco-slant-white" id="section-features">
       <div class="container">
 
@@ -58,7 +58,7 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-thumb-up display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Free Bootstrap 4</h5>
+                <h5 class="mt-0">Free Bootsrtap 4</h5>
                 <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
               </div>
@@ -119,12 +119,12 @@
       </div>
     </section>
     <!-- END section -->
-
+    
     <section class="ftco-section ftco-slant" id="section-services">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">Services</h2>
+            <h2 class="text-uppercase ftco-uppercase">Nuestros Servicios</h2>
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
                 <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -137,8 +137,8 @@
           <div class="col-lg-4 mb-5 ftco-animate">
             <figure><img src="images/img_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid"></figure>
             <div class="p-3">
-              <h3 class="h4">Title of Service here</h3>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h3 class="h4">Monitoreo en Tiempo Real</h3>
+              <p class="mb-4">Mira en tiempo real la ubicación y el estado del vehículo a través de sensores GPS y drones que envían actualizaciones periódicas.</p>
               <ul class="list-unstyled ftco-list-check text-left">
                 <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Free template for designer and developers</span></li>
                 <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Vokalia and consonantia blind texts</span></li>
@@ -150,8 +150,8 @@
           <div class="col-lg-4 mb-5 ftco-animate">
             <figure><img src="images/img_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid"></figure>
             <div class="p-3">
-              <h3 class="h4">Title of Service here</h3>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h3 class="h4">Sistema de Alarmas</h3>
+              <p class="mb-4">Se activa automáticamente en caso de intrusión o manipulación no autorizada y notifica el propietario del vehículo.</p>
               <ul class="list-unstyled ftco-list-check text-left">
                 <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Free template for designer and developers</span></li>
                 <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Vokalia and consonantia blind texts</span></li>
@@ -163,8 +163,8 @@
           <div class="col-lg-4 mb-5 ftco-animate">
             <figure><img src="images/img_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid"></figure>
             <div class="p-3">
-              <h3 class="h4">Title of Service here</h3>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h3 class="h4">Registro de Incidentes</h3>
+              <p class="mb-4">Graba y almacena datos de monitoreo para ser consultados luego por los usuarios o autoridades en caso de robo o incidente.              </p>
               <ul class="list-unstyled ftco-list-check text-left">
                 <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Free template for designer and developers</span></li>
                 <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Vokalia and consonantia blind texts</span></li>
@@ -248,115 +248,12 @@
       </div>
     </section>
 
-{{-- Parte More Features --}}
-    <section class="ftco-section ftco-slant ftco-slant-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">More Features</h2>
-            <div class="row justify-content-center mb-5">
-              <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END row -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="owl-carousel ftco-owl">
-
-              <div class="item ftco-animate">
-                <div class="media d-block text-left ftco-media p-md-5 p-4">
-                  <div class="ftco-icon mb-3"><span class="oi oi-pencil display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">Easy to Customize</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item ftco-animate">
-                <div class="media d-block text-left ftco-media p-md-5 p-4">
-                  <div class="ftco-icon mb-3"><span class="oi oi-monitor display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">Web Development</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item ftco-animate">
-                <div class="media d-block text-left ftco-media p-md-5 p-4">
-                  <div class="ftco-icon mb-3"><span class="oi oi-location display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">#</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item ftco-animate">
-                <div class="media d-block text-left ftco-media p-md-5 p-4">
-                  <div class="ftco-icon mb-3"><span class="oi oi-person display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">For People Like You</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="ftco-section ftco-slant ftco-slant-light  bg-light ftco-slant ftco-slant-white" id="section-faq">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 text-center ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">FAQ</h2>
-            <div class="row justify-content-center mb-5">
-              <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END row -->
-        <div class="row">
-          <div class="col-md-6 mb-5 ftco-animate">
-            <h3 class="h5 mb-4">What is Exclusivity?</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p class="mb-5"><a href="#">Learn More</a></p>
-          </div>
-          <div class="col-md-6 mb-5 ftco-animate">
-            <h3 class="h5 mb-4">Can I upgrade?</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p class="mb-5"><a href="#">Learn More</a></p>
-          </div>
-          <div class="col-md-6 mb-5 ftco-animate">
-            <h3 class="h5 mb-4">Can I have more than 5 users?</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p class="mb-5"><a href="#">Learn More</a></p>
-          </div>
-          <div class="col-md-6 mb-5 ftco-animate">
-            <h3 class="h5 mb-4">If I need support who do I contact?</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p class="mb-5"><a href="#">Learn More</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="ftco-section ftco-slant ftco-slant-light" id="section-about">
       <div class="container">
 
         <div class="row mb-5">
           <div class="col-md-12 text-center ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">About Us</h2>
+            <h2 class="text-uppercase ftco-uppercase">Sobre Nosotros</h2>
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
                 <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Feel free to send us an email to <a href="#">info@yourdomain.com</a></p>
@@ -394,10 +291,10 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">Fun Facts</h2>
+            <h2 class="text-uppercase ftco-uppercase">Datos irrelevantes!</h2>
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="lead">La humanidad es cada vez más sorprendente, y es muy importante para nosotros llevar un registro claro de sus mayores hazañas. Aquí hay algunos de sus acontecimientos más destacables expresados en cifras anuales.</p>
               </div>
             </div>
           </div>
@@ -406,20 +303,20 @@
         <div class="row">
           <div class="col-md ftco-animate">
             <div class="ftco-counter text-center">
-              <span class="ftco-number" data-number="34146">0</span>
-              <span class="ftco-label">Lines of Codes</span>
+              <span class="ftco-number" data-number="40675">0</span>
+              <span class="ftco-label">Libras de queso devoradas por persona</span>
             </div>
           </div>
           <div class="col-md ftco-animate">
             <div class="ftco-counter text-center">
-              <span class="ftco-number" data-number="1239">0</span>
-              <span class="ftco-label">Pizza Consume</span>
+              <span class="ftco-number" data-number="6803">0</span>
+              <span class="ftco-label">Heridos por retretes</span>
             </div>
           </div>
           <div class="col-md ftco-animate">
             <div class="ftco-counter text-center">
-              <span class="ftco-number" data-number="124">0</span>
-              <span class="ftco-label">Number of Clients</span>
+              <span class="ftco-number" data-number="863">0</span>
+              <span class="ftco-label">Patos de hule perdidos en el mar</span>
             </div>
           </div>
         </div>
@@ -433,7 +330,7 @@
             <div class="row">
               <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                  <h2 class="ftco-heading-2">Company</h2>
+                  <h2 class="ftco-heading-2">Compañía</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">About</a></li>
                     <li><a href="#" class="py-2 d-block">Jobs</a></li>
@@ -444,7 +341,7 @@
               </div>
               <div class="col-md">
                  <div class="ftco-footer-widget mb-4">
-                  <h2 class="ftco-heading-2">Communities</h2>
+                  <h2 class="ftco-heading-2">Comunidad</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">Support</a></li>
                     <li><a href="#" class="py-2 d-block">Sharing is Caring</a></li>
@@ -455,7 +352,7 @@
               </div>
               <div class="col-md">
                  <div class="ftco-footer-widget mb-4">
-                  <h2 class="ftco-heading-2">Useful links</h2>
+                  <h2 class="ftco-heading-2">Páginas de Utilidad</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">Bootstrap 4</a></li>
                     <li><a href="#" class="py-2 d-block">jQuery</a></li>
@@ -474,11 +371,6 @@
                 <li><a href="#"><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md text-left">
-            <p>&copy; Exclusivity 2024. All Rights Reserved.  DataPulse Technologies<span class="icon-heart text-danger"></span></p>
           </div>
         </div>
       </div>
