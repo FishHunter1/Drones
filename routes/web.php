@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name(name: 'home');
 
-#Route::prefix('/Dron')->controller(DronesController::class)->group(function () {
-#    Route::get('/', 'suscripciones' )->name('Dron.Suscripciones');
-#});
+Route::prefix('/authentication')->controller(DronesController::class)->group(function () {
+    Route::get('/login', 'loginpage')->name('Dron.login');
+    Route::get('/register', 'registerpage')->name('Dron.register');
+});
+
+

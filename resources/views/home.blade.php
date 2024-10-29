@@ -26,8 +26,8 @@
 
         <div class="collapse navbar-collapse" id="ftco-navbar">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="#" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Register</a></li>
+                <li class="nav-item active"><a href="{{route('Dron.login')}}" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="{{route('Dron.register')}}" class="nav-link">Register</a></li>
             </ul>
         </div>
     </nav>
@@ -376,9 +376,4 @@
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#4586ff"/></svg></div>
 
-  </body>
-</html>
-
-</body>
-</html>
 @endsection
