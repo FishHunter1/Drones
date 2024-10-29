@@ -19,11 +19,17 @@
             <li class="nav-item active"><a href="#section-home" class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="#section-features" class="nav-link">Novedades</a></li>
             <li class="nav-item"><a href="#section-services" class="nav-link">Servicios</a></li>
-            <li class="nav-item"><a href="#section-pricing" class="nav-link">Subscripciones</a></li>
+            <li class="nav-item"><a href="#section-pricing" class="nav-link">Suscripciones</a></li>
             <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
           </ul>
         </div>
-      </div>
+
+        <div class="collapse navbar-collapse" id="ftco-navbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="#" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Register</a></li>
+            </ul>
+        </div>
     </nav>
     <!-- END nav -->
 
@@ -41,16 +47,16 @@
     </section>
 
 
-    
+
     <section class="ftco-section bg-light  ftco-slant ftco-slant-white" id="section-features">
       <div class="container">
 
         <div class="row">
           <div class="col-md-12 text-center mb-5 ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">Our Awesome Features</h2>
+            <h2 class="text-uppercase ftco-uppercase">Nuestras Características Destacadas</h2>
             <div class="row justify-content-center">
               <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="lead">Descubre las funciones avanzadas que hacen de nuestro sistema la solución ideal para el monitoreo y la seguridad de vehículos en tiempo real.</p>
               </div>
             </div>
           </div>
@@ -58,9 +64,9 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-thumb-up display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Free Bootsrtap 4</h5>
-                <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
+                <h5 class="mt-0">Interfaz Amigable</h5>
+                <p class="mb-5">Nuestra página web está diseñada con una interfaz moderna y fácil de usar, ofreciendo una experiencia intuitiva para que accedas rápidamente a toda la información necesaria sobre nuestros servicios de monitoreo.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Más información</a></p>
               </div>
             </div>
           </div>
@@ -68,9 +74,9 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-bolt display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Fast Loading</h5>
-                <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
+                <h5 class="mt-0">Carga Rápida</h5>
+                <p class="mb-5">Nuestro sistema está optimizado para un rendimiento rápido, brindando actualizaciones en tiempo real con baja latencia para que siempre tengas los datos más recientes de tus vehículos.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Más información</a></p>
               </div>
             </div>
           </div>
@@ -78,9 +84,9 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-person display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Designer &amp; Developer</h5>
-                <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
+                <h5 class="mt-0">Diseño y Desarrollo Profesional</h5>
+                <p class="mb-5">Desarrollado por expertos en seguridad y monitoreo, nuestro sistema combina lo mejor del diseño y la tecnología para ofrecerte una solución completa y confiable</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Más información</a></p>
               </div>
             </div>
           </div>
@@ -89,9 +95,9 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-code display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Clean Code</h5>
-                <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
+                <h5 class="mt-0">Código Limpio</h5>
+                <p class="mb-5">Nuestro equipo sigue las mejores prácticas de desarrollo para garantizar un código limpio y de alta calidad, lo que asegura un rendimiento robusto y una fácil escalabilidad del sistema.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">LMás información</a></p>
               </div>
             </div>
           </div>
@@ -99,9 +105,9 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-magnifying-glass display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Search Engine</h5>
-                <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
+                <h5 class="mt-0">Optimización para Motores de Búsqueda</h5>
+                <p class="mb-5">Hemos optimizado nuestra web para que encuentres toda la información relevante fácilmente y nuestra plataforma sea accesible y visible en búsquedas en línea.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Más información</a></p>
               </div>
             </div>
           </div>
@@ -109,9 +115,9 @@
             <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
               <div class="ftco-icon mb-3"><span class="oi oi-phone display-4 text-muted"></span></div>
               <div class="media-body">
-                <h5 class="mt-0">Fully Responsive</h5>
-                <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
+                <h5 class="mt-0">Completamente Adaptable</h5>
+                <p class="mb-5">Disfruta de una experiencia fluida en cualquier dispositivo. Nuestro sistema y página web están diseñados para adaptarse perfectamente, ya sea en escritorio, tablet o móvil.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Más información</a></p>
               </div>
             </div>
           </div>
@@ -119,7 +125,7 @@
       </div>
     </section>
     <!-- END section -->
-    
+
     <section class="ftco-section ftco-slant" id="section-services">
       <div class="container">
         <div class="row">
@@ -127,7 +133,7 @@
             <h2 class="text-uppercase ftco-uppercase">Nuestros Servicios</h2>
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="lead">Descubre las herramientas avanzadas de monitoreo y seguridad que ofrecemos para una gestión de flotas segura y eficiente.</p>
               </div>
             </div>
           </div>
@@ -135,40 +141,40 @@
         <!-- END row -->
         <div class="row">
           <div class="col-lg-4 mb-5 ftco-animate">
-            <figure><img src="images/img_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid"></figure>
+            <figure><img src="images/img_2.jpg" alt="aea" class="img-fluid"></figure>
             <div class="p-3">
               <h3 class="h4">Monitoreo en Tiempo Real</h3>
               <p class="mb-4">Mira en tiempo real la ubicación y el estado del vehículo a través de sensores GPS y drones que envían actualizaciones periódicas.</p>
               <ul class="list-unstyled ftco-list-check text-left">
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Free template for designer and developers</span></li>
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Vokalia and consonantia blind texts</span></li>
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Behind the word mountains blind texts</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Gestión precisa de flotas</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>upervisión 24/7</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Mapas detallados y actualizados</span></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-4 mb-5 ftco-animate">
-            <figure><img src="images/img_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid"></figure>
+            <figure><img src="images/img_1.jpg" alt="aea" class="img-fluid"></figure>
             <div class="p-3">
               <h3 class="h4">Sistema de Alarmas</h3>
               <p class="mb-4">Se activa automáticamente en caso de intrusión o manipulación no autorizada y notifica el propietario del vehículo.</p>
               <ul class="list-unstyled ftco-list-check text-left">
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Free template for designer and developers</span></li>
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Vokalia and consonantia blind texts</span></li>
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Behind the word mountains blind texts</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Notificaciones en tiempo real</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Detección de movimiento sospechoso</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Personalización de alertas</span></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-4 mb-5 ftco-animate">
-            <figure><img src="images/img_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid"></figure>
+            <figure><img src="images/img_3.jpg" alt="aea" class="img-fluid"></figure>
             <div class="p-3">
               <h3 class="h4">Registro de Incidentes</h3>
               <p class="mb-4">Graba y almacena datos de monitoreo para ser consultados luego por los usuarios o autoridades en caso de robo o incidente.              </p>
               <ul class="list-unstyled ftco-list-check text-left">
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Free template for designer and developers</span></li>
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Vokalia and consonantia blind texts</span></li>
-                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Behind the word mountains blind texts</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Historial detallado de eventos</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Acceso rápido a registros</span></li>
+                <li class="d-flex mb-2"><span class="oi oi-check mr-3 text-primary"></span> <span>Pruebas para reportes oficiales</span></li>
               </ul>
             </div>
           </div>
@@ -187,7 +193,7 @@
             <h2 class="text-uppercase ftco-uppercase">Subscripciones</h2>
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p class="lead">Elige el plan que mejor se adapte a tus necesidades. Ofrecemos diferentes opciones de suscripción para que puedas acceder a nuestras herramientas de monitoreo y seguridad con la flexibilidad que necesitas.</p>
               </div>
             </div>
           </div>
@@ -196,7 +202,7 @@
         <div class="row">
           <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
             <div class="ftco-pricing">
-              <h2>Standard</h2>
+              <h2>Estandar</h2>
               <p class="ftco-price-per text-center"><sup>$</sup><strong>25</strong><span>/mo</span></p>
               <ul class="list-unstyled mb-5">
                 <li>Far far away behind the word mountains</li>
@@ -208,7 +214,7 @@
           </div>
           <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
             <div class="ftco-pricing">
-              <h2>Professional</h2>
+              <h2>Profesional</h2>
               <p class="ftco-price-per text-center"><sup>$</sup><strong>75</strong><span>/mo</span></p>
               <ul class="list-unstyled mb-5">
                 <li>Far far away behind the word mountains</li>
@@ -256,7 +262,7 @@
             <h2 class="text-uppercase ftco-uppercase">Sobre Nosotros</h2>
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
-                <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Feel free to send us an email to <a href="#">info@yourdomain.com</a></p>
+                <p class="lead">Somos una empresa comprometida con la seguridad y eficiencia en la gestión de flotas. Nuestro sistema de monitoreo combina tecnología de punta para ofrecer control total y tranquilidad a nuestros clientes. <a href="">DataPulse@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -266,22 +272,24 @@
 
         <div class="row no-gutters align-items-center ftco-animate">
           <div class="col-md-6 mb-md-0 mb-5">
-            <img src="images/bg_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
+            <img src="images/bg_3.jpg" alt="aea" class="img-fluid">
           </div>
           <div class="col-md-6 p-md-5">
-            <h3 class="h3 mb-4">Far far away, behind the word mountains</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p class="mb-5"><a href="#">Learn More</a></p>
+            <h3 class="h3 mb-4">Nuestra Visión y Compromiso</h3>
+            <p>En DataPulse Technologies, estamos comprometidos con la seguridad y eficiencia en la gestión de flotas de transporte. Nuestro sistema de monitoreo de última generación utiliza sensores avanzados de telemetría y drones para proporcionar información en tiempo real, permitiendo a nuestros usuarios tener un control total sobre sus vehículos y mejorar la logística de sus operaciones. Con TrailBlazer, buscamos innovar en la industria del transporte, promoviendo un entorno más seguro y sostenible.
+                Descubre cómo nuestra tecnología transforma la forma en que gestionas y supervisas tus flotas. Con TrailBlazer, siempre estarás un paso adelante.</p>
+            <p class="mb-5"><a href="#">Descubre Más</a></p>
           </div>
         </div>
         <div class="row no-gutters align-items-center ftco-animate">
           <div class="col-md-6 order-md-3 mb-md-0 mb-5">
-            <img src="images/bg_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
+            <img src="images/bg_1.jpg" alt="aea" class="img-fluid">
           </div>
           <div class="col-md-6 p-md-5 order-md-1">
-            <h3 class="h3 mb-4">Far from the countries Vokalia and Consonantia</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p class="mb-5"><a href="#">Learn More</a></p>
+            <h3 class="h3 mb-4">Transformando la Industria del Transporte</h3>
+            <p>En DataPulse Technologies, nuestra tecnología de monitoreo permite visualizar y controlar cada aspecto de tus flotas de transporte desde cualquier lugar. Con soluciones en tiempo real impulsadas por sensores inteligentes y drones, aseguramos que cada vehículo esté donde debe estar, cuando debe estar. Nos esforzamos por brindar a nuestros clientes tranquilidad y eficiencia, minimizando riesgos y optimizando operaciones.
+            Explora cómo TrailBlazer redefine la gestión de flotas con innovación y precisión.</p>
+            <p class="mb-5"><a href="#">Descubre Más</a></p>
           </div>
         </div>
 
@@ -332,10 +340,10 @@
                 <div class="ftco-footer-widget mb-4">
                   <h2 class="ftco-heading-2">Compañía</h2>
                   <ul class="list-unstyled">
-                    <li><a href="#" class="py-2 d-block">About</a></li>
-                    <li><a href="#" class="py-2 d-block">Jobs</a></li>
-                    <li><a href="#" class="py-2 d-block">Press</a></li>
-                    <li><a href="#" class="py-2 d-block">News</a></li>
+                    <li><a href="#section-about" class="py-2 d-block">About</a></li>
+                    <li><a href="#" class="py-2 d-block">Carreras</a></li>
+                    <li><a href="#" class="py-2 d-block">Inversionistas</a></li>
+                    <li><a href="#" class="py-2 d-block">Política de Privacidad</a></li>
                   </ul>
                 </div>
               </div>
@@ -344,20 +352,9 @@
                   <h2 class="ftco-heading-2">Comunidad</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">Support</a></li>
-                    <li><a href="#" class="py-2 d-block">Sharing is Caring</a></li>
-                    <li><a href="#" class="py-2 d-block">Better Web</a></li>
-                    <li><a href="#" class="py-2 d-block">Good Template</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md">
-                 <div class="ftco-footer-widget mb-4">
-                  <h2 class="ftco-heading-2">Páginas de Utilidad</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#" class="py-2 d-block">Bootstrap 4</a></li>
-                    <li><a href="#" class="py-2 d-block">jQuery</a></li>
-                    <li><a href="#" class="py-2 d-block">HTML5</a></li>
-                    <li><a href="#" class="py-2 d-block">Sass</a></li>
+                    <li><a href="#" class="py-2 d-block">Foro de Soporte</a></li>
+                    <li><a href="#" class="py-2 d-block">Blog/Noticias</a></li>
+                    <li><a href="#" class="py-2 d-block">Guías y Tutoriales</a></li>
                   </ul>
                 </div>
               </div>
@@ -366,9 +363,9 @@
           <div class="col-md-4">
             <div class="ftco-footer-widget mb-4">
               <ul class="ftco-footer-social list-unstyled float-md-right float-lft">
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                <li><a href="https://twitter.com/AniTrendz/status/1850530389275672583"><span class="icon-twitter"></span></a></li>
+                <li><a href="https://www.facebook.com/loquepasa.co/?locale=es_LA"><span class="icon-facebook"></span></a></li>
+                <li><a href="https://www.instagram.com/ultimahora.noticias/?hl=es-la"><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
           </div>
