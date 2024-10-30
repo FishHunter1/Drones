@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.template2')
 
 @section('title', 'Login')
 
@@ -10,20 +10,22 @@
                 <form action="">
                     <h2>Login</h2>
                     <div class="inputbox">
-                        <input type="email" required></input>
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" required>
                         <label for="">Email</label>
                     </div>
                     <div class="inputbox">
-                        <input type="password" required></input>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
                         <label for="">Password</label>
                     </div>
                     <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me</label>
-                        <a href="#">Forgot Password?</a>
+                        <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
+
                     </div>
                     <button>Log in</button>
-                    <div class="Register">
-                        <p>Don't have a account <a href="{{route('Dron.register')}}">Register</a></p>
+                    <div class="register">
+                        <p>Don't have a account <a href="#">Register</a></p>
                     </div>
                 </form>
             </div>
