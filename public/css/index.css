@@ -26,6 +26,21 @@ section {
     justify-content: center;
     align-items: center;
 }
+.form-box-reactive {
+    position: relative;
+    max-width: 90vw; 
+    max-height: 90vh; 
+    padding: 20px; 
+    background: transparent;
+    border: 2px solid rgba(0,0,0,0.5); 
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+    overflow: auto; 
+}
 h2{
     font-size: 2em;
     color: #000; /* Cambiado a negro */
