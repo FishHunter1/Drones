@@ -1,76 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trucking Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-                <div class="position-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('dashboard') }}">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Trucks</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Drivers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Routes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Reports</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+@extends('layouts.template')
 
-            <!-- Main Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <h1 class="h2">Dashboard</h1>
-                <div class="row my-4">
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Trucks</h5>
-                                <p class="card-text">10</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Drivers</h5>
-                                <p class="card-text">25</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Routes</h5>
-                                <p class="card-text">15</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Current Deliveries</h5>
-                                <p class="card-text">5</p>
-                            </div>
-                        </div>
-                    </div>
+@section('title', 'Dashboard')
+
+@section('content')
+
+<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="{{route('home')}}">TrailBlazer</a>
+    </nav>
+    <!-- END nav -->
+
+
+
+    <footer class="ftco-footer ftco-bg-dark">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md">
+                  <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Compañía</h2>
+                    <ul class="list-unstyled">
+                      <li><a href="#section-about" class="py-2 d-block">About</a></li>
+                      <li><a href="#" class="py-2 d-block">Carreras</a></li>
+                      <li><a href="#" class="py-2 d-block">Inversionistas</a></li>
+                      <li><a href="#" class="py-2 d-block">Política de Privacidad</a></li>
+                    </ul>
+                  </div>
                 </div>
-            </main>
+                <div class="col-md">
+                   <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Comunidad</h2>
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="py-2 d-block">Support</a></li>
+                      <li><a href="#" class="py-2 d-block">Foro de Soporte</a></li>
+                      <li><a href="#" class="py-2 d-block">Blog/Noticias</a></li>
+                      <li><a href="#" class="py-2 d-block">Guías y Tutoriales</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ftco-footer-widget mb-4">
+                <ul class="ftco-footer-social list-unstyled float-md-right float-lft">
+                  <li><a href="https://twitter.com/AniTrendz/status/1850530389275672583"><span class="icon-twitter"></span></a></li>
+                  <li><a href="https://www.facebook.com/loquepasa.co/?locale=es_LA"><span class="icon-facebook"></span></a></li>
+                  <li><a href="https://www.instagram.com/ultimahora.noticias/?hl=es-la"><span class="icon-instagram"></span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</body>
-</html>
+      </footer>
+
+@endsection

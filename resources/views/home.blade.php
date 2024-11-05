@@ -184,7 +184,7 @@
     </section>
 
 
-{{-- Parte Subscripciones --}}
+    {{-- Parte Subscripciones --}}
 
     <section class="ftco-section bg-light ftco-slant ftco-slant-white" id="section-pricing">
       <div class="container">

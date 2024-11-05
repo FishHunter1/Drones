@@ -5,8 +5,12 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::get(uri: '/dashboard', action: DashboardController::class)->name('home');
 
 // Separate GET route to show the login form
 Route::get('/authentication/login', function () {
@@ -21,10 +25,12 @@ Route::get('/authentication/register', function () {
 Route::prefix('/authentication')->group(function () {
     // Route to handle login submission
     Route::post('/login', [LoginController::class, 'perform'])->name('login.perform');
-    
+
     // Route to handle registration submission
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
-    
+
     // Route to handle logout
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
+
+
