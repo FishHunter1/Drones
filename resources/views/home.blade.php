@@ -26,8 +26,8 @@
 
         <div class="collapse navbar-collapse" id="ftco-navbar">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="{{route('Dron.login')}}" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="{{route('Dron.register')}}" class="nav-link">Register</a></li>
+                <li class="nav-item active"><a href="{{route('login')}}" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Register</a></li>
             </ul>
         </div>
     </nav>

@@ -1,3 +1,4 @@
+<?php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,10 +11,10 @@ class Usuario extends Authenticatable
     protected $fillable = [
         'nombre',
         'apellido',
-        'email',
-        'contraseña',
         'direccion',
         'telefono',
+        'email',
+        'contraseña',
         'rol_id',
     ];
 

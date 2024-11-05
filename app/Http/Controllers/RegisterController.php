@@ -16,16 +16,16 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:usuarios',
             'password' => 'required|string|confirmed|min:6',
             'direccion' => 'required|string|max:255',
-            'telefono' => 'required|integer',
+            'telefono' => 'required|integer|max:12',
         ]);
 
         Usuario::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
-            'email' => $request->email,
-            'contraseña' => Hash::make($request->password),
             'direccion' => $request->direccion,
             'telefono' => $request->telefono,
+            'email' => $request->email,
+            'contraseña' => Hash::make($request->password),
         ]);
 
         return redirect()->route('login')->with('success', 'Registration successful. Please log in.');

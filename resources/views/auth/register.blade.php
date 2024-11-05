@@ -11,12 +11,24 @@
                     @csrf
                     <h2>Registro</h2>
                     <div class="inputbox">
-                        <label for="">Nombre</label>
+                        <ion-icon name="person-outline"></ion-icon>
                         <input type="text" name="nombre" required>
+                        <label for="">Nombre</label>
                     </div>
                     <div class="inputbox">
-                        <label for="">Apellido</label>
+                        <ion-icon name="person-outline"></ion-icon>
                         <input type="text" name="apellido" required>
+                        <label for="">Apellido</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <input type="text" name="direccion" required>
+                        <label for="">Dirección</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <input type="tel" name="telefono" required>
+                        <label for="">Teléfono</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
@@ -32,14 +44,6 @@
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password_confirmation" required>
                         <label for="">Confirm Password</label>
-                    </div>
-                    <div class="inputbox">
-                        <label for="">Dirección</label>
-                        <input type="text" name="direccion" required>
-                    </div>
-                    <div class="inputbox">
-                        <label for="">Teléfono</label>
-                        <input type="tel" name="telefono" required>
                     </div>
                     <button type="submit">Registrarse</button>
                 </form>
