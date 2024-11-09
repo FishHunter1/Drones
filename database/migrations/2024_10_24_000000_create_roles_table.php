@@ -10,8 +10,8 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->unique(); // Asegúrate de que el nombre del rol sea único
-            $table->json('permisos'); // Cambia 'array' por 'json'
+            $table->string('nombre')->unique(); 
+            $table->json('permisos');
             $table->timestamps();
         });
     }

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 section {
     display: flex;
@@ -14,56 +14,51 @@ section {
     background-size: cover;
     image-rendering: crisp-edges;
 }
-.form-box{
-    position: relative;
-    width: 400px;
-    height: 450px;
-    background: transparent;
-    border: 2px solid rgba(0,0,0,0.5); /* Cambiado a negro */
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.form-box,
 .form-box-reactive {
     position: relative;
-    max-width: 90vw; 
-    max-height: 90vh; 
-    padding: 20px; 
+    width: 400px; /* Ajustado para más espacio */
+    min-height: 500px; /* Asegura que haya suficiente espacio para los campos */
     background: transparent;
-    border: 2px solid rgba(0,0,0,0.5); 
+    border: 2px solid rgba(0,0,0,0.5);
     border-radius: 20px;
     backdrop-filter: blur(15px);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box; 
-    overflow: auto; 
+    padding: 20px;
 }
-h2{
-    font-size: 2em;
-    color: #000; /* Cambiado a negro */
+.form-box-reactive {
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+    box-sizing: border-box;
+}
+h2 {
+    font-size: 2.2em;
+    color: #000;
     text-align: center;
+    margin-bottom: 20px;
 }
-.inputbox{
+.inputbox {
     position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #000; /* Cambiado a negro */
+    margin: 20px 0;
+    width: 100%;
+    max-width: 310px;
+    border-bottom: 2px solid #000;
 }
-.inputbox label{
+.inputbox label {
     position: absolute;
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    color: #000; /* Cambiado a negro */
+    color: #000;
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
 }
-input:focus ~ label,
-input:valid ~ label{
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label {
     top: -5px;
 }
 .inputbox input {
@@ -72,57 +67,63 @@ input:valid ~ label{
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1em;
+    font-size: 1.1em; /* Aumentado para una mejor visibilidad */
     padding: 0 35px 0 5px;
-    color: #000; /* Cambiado a negro */
+    color: #000;
 }
-.inputbox ion-icon{
+.inputbox ion-icon {
     position: absolute;
     right: 8px;
-    color: #000; /* Cambiado a negro */
+    color: #000;
     font-size: 1.2em;
     top: 20px;
 }
-.forget{
-    margin: -15px 0 15px;
-    font-size: .9em;
-    color: #000; /* Cambiado a negro */
-    display: flex;
-    justify-content: space-between;
-}
-.forget label input{
-    margin-right: 3px;
-}
-.forget label a{
-    color: #000; /* Cambiado a negro */
-    text-decoration: none;
-}
-.forget label a:hover{
-    text-decoration: underline;
-}
-button{
+button {
     width: 100%;
-    height: 40px;
+    height: 45px;
     border-radius: 40px;
-    background: #000; /* Cambiado a negro */
+    background: #000;
     color: #fff;
     border: none;
     outline: none;
     cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 20px; /* Espaciado más grande */
+}
+.register {
     font-size: 1em;
-    font-weight: 600;
-}
-.register{
-    font-size: .9em;
-    color: #000; /* Cambiado a negro */
+    color: #000;
     text-align: center;
-    margin: 25px 0 10px;
+    margin-top: 20px;
 }
-.register p a{
+.register p a {
     text-decoration: none;
-    color: #000; /* Cambiado a negro */
+    color: #000;
     font-weight: 600;
 }
-.register p a:hover{
+.register p a:hover {
     text-decoration: underline;
+}
+
+/* Alerta de errores */
+.error-messages {
+    position: relative;
+    margin-bottom: 20px;
+}
+.alert {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+}
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
 }

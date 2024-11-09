@@ -1,4 +1,4 @@
-@extends('layouts.template2')
+@extends('layouts.formularios')
 
 @section('title', 'Login')
 
@@ -7,17 +7,19 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="{{ route('login.perform') }}" method="POST">
+                <form action="{{ route('login.perform') }}" method="POST" autocomplete="off">
                     @csrf
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" name="email" required>
+                        <!-- Cambié el tipo a text y lo renombré para evitar que se autocomplete -->
+                        <input type="text" name="email" required autocomplete="new-email">
                         <label for="">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" required>
+                        <!-- Cambié el tipo a text y lo renombré para evitar que se autocomplete -->
+                        <input type="password" name="password" required autocomplete="new-password">
                         <label for="">Password</label>
                     </div>
                     <div class="forget">
@@ -30,6 +32,17 @@
                     <div class="register">
                         <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
                     </div>
+
+                    <!-- Error message below the login button -->
+                    @if ($errors->any())
+                        <div class="error-messages">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>

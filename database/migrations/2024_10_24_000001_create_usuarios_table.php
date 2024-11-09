@@ -15,11 +15,12 @@ class CreateUsuariosTable extends Migration
             $table->string('email');
             $table->string('contraseña');
             $table->string('direccion');
-            $table->integer('telefono');
-            $table->foreignId('rol_id')->nullable()->constrained('roles')->onDelete('set null');
+            $table->string('telefono', 15);
+            $table->foreignId('rol_id')->default(2)->constrained('roles')->onDelete('set null'); // El valor 2 es solo un ejemplo, cámbialo según el rol que quieras.
             $table->timestamps();
         });
     }
+
     public function down()
     {
         Schema::dropIfExists('usuarios');

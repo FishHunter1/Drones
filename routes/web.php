@@ -10,27 +10,21 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::get(uri: '/dashboard', action: DashboardController::class)->name('home');
-
-// Separate GET route to show the login form
 Route::get('/authentication/login', function () {
-    return view('auth.login'); // Adjusted to point to the 'drones' folder
+    return view('auth.login');
 })->name('login');
 
-// Separate GET route to show the registration form
 Route::get('/authentication/register', function () {
-    return view('auth.register'); // Adjusted to point to the 'drones' folder
+    return view('auth.register');
 })->name('register');
 
+route::get('/dashboard', action: function (){
+    return view('dashboard');
+})->name('dashboard');
+
 Route::prefix('/authentication')->group(function () {
-    // Route to handle login submission
     Route::post('/login', [LoginController::class, 'perform'])->name('login.perform');
-
-    // Route to handle registration submission
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
-
-    // Route to handle logout
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
-
 
