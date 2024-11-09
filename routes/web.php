@@ -22,6 +22,10 @@ route::get('/dashboard', action: function (){
     return view('dashboard');
 })->name('dashboard');
 
+route::get('/dashboard/forme', action: function (){
+    return view('empleados.forme');
+})->name('forme');
+
 Route::prefix('/authentication')->group(function () {
     Route::post('/login', [LoginController::class, 'perform'])->name('login.perform');
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');

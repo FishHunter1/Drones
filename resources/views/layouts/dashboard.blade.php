@@ -42,8 +42,6 @@
     <script src="{{ asset('modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
     <script src="{{ asset('modules/moment.min.js') }}"></script>
     <script src="{{ asset('js/stisla.js') }}"></script>
-
-    <!-- JS Libraries -->
     <script src="{{ asset('modules/simple-weather/jquery.simpleWeather.min.js') }}"></script>
     <script src="{{ asset('modules/chart.min.js') }}"></script>
     <script src="{{ asset('modules/jqvmap/dist/jquery.vmap.min.js') }}"></script>

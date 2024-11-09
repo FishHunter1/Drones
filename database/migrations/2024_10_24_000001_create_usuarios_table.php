@@ -16,7 +16,7 @@ class CreateUsuariosTable extends Migration
             $table->string('contraseña');
             $table->string('direccion');
             $table->string('telefono', 15);
-            $table->foreignId('rol_id')->default(2)->constrained('roles')->onDelete('set null'); // El valor 2 es solo un ejemplo, cámbialo según el rol que quieras.
+            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
             $table->timestamps();
         });
     }

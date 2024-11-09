@@ -1,10 +1,12 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Role;
 
 class Usuario extends Authenticatable
 {
@@ -24,4 +26,24 @@ class Usuario extends Authenticatable
         'contraseña',
         'remember_token',
     ];
+
+    // Método para asegurar que el rol predeterminado sea asignado si no se especifica
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($usuario) {
+            // Buscar el rol de Usuario predeterminado
+            if (empty($usuario->rol_id)) {
+                $defaultRole = Role::where('nombre', 'Usuario')->first();
+                $usuario->role_id = $defaultRole->id ?? null; // Asignar el rol de Usuario si existe
+            }
+        });
+    }
+
+    // Relación con la tabla de roles
+    public function rol()
+    {
+        return $this->belongsTo(Role::class, 'rol_id');
+    }
 }

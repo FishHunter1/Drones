@@ -12,13 +12,11 @@
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <!-- Cambié el tipo a text y lo renombré para evitar que se autocomplete -->
                         <input type="text" name="email" required autocomplete="new-email">
                         <label for="">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <!-- Cambié el tipo a text y lo renombré para evitar que se autocomplete -->
                         <input type="password" name="password" required autocomplete="new-password">
                         <label for="">Password</label>
                     </div>
