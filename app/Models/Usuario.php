@@ -19,7 +19,7 @@ class Usuario extends Authenticatable
         'telefono',
         'email',
         'contraseña',
-        'rol_id',
+        'role_id',
     ];
 
     protected $hidden = [
@@ -34,7 +34,7 @@ class Usuario extends Authenticatable
 
         static::creating(function ($usuario) {
             // Buscar el rol de Usuario predeterminado
-            if (empty($usuario->rol_id)) {
+            if (empty($usuario->role_id)) {
                 $defaultRole = Role::where('nombre', 'Usuario')->first();
                 $usuario->role_id = $defaultRole->id ?? null; // Asignar el rol de Usuario si existe
             }
@@ -44,6 +44,6 @@ class Usuario extends Authenticatable
     // Relación con la tabla de roles
     public function rol()
     {
-        return $this->belongsTo(Role::class, 'rol_id');
+        return $this->belongsTo(Role::class, 'role_id');
     }
 }

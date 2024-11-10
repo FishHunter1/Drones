@@ -10,9 +10,10 @@ class CreateConductoresTable extends Migration
     {
         Schema::create('conductores', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->string('url_licencia');
             $table->enum('estatus', ['activo', 'inactivo']);
+            $table->foreignId('admin_id')->constrained('usuarios')->onDelete('cascade'); // Agregamos la columna admin_id
             $table->timestamps();
         });
     }

@@ -14,6 +14,6 @@ class Role extends Model
     // Relación inversa con usuarios
     public function usuarios()
     {
-        return $this->hasMany(Usuario::class, 'rol_id');
+        return $this->hasMany(Usuario::class, 'role_id');
     }
 }

@@ -74,7 +74,7 @@
                                     <h4>Formulario para Registro de Empleados</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="POST">
+                                    <form action="{{ route('RegistroE.create') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label for="nombre">Nombre</label>
@@ -83,6 +83,10 @@
                                         <div class="form-group">
                                             <label for="apeliido">Apellido</label>
                                             <input type="text" name="apellido" class="form-control" placeholder="Ingresa tu apellido" required autocomplete="new-apellido">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cedula">Cedula</label>
+                                            <input type="ced" name="cedula" class="form-control" placeholder="Ingresa tu cedula" required autocomplete="new-cedula">
                                         </div>
                                         <div class="form-group">
                                             <label for="telefono">Telefono</label>
@@ -101,14 +105,13 @@
                                             <input type="password" name="password" class="form-control" placeholder="Ingresa tu contraseña" required autocomplete="new-password">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Confirmar Contraseña</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Confirma la contraseña" required autocomplete="new-confirm-password">
+                                            <label for="password_confirmation">Confirmar Contraseña</label>
+                                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirma la contraseña" required autocomplete="new-password">
                                         </div>
                                         <div class="form-group">
                                             <label for="role">Rol</label>
                                             <select id="role" name="role" class="form-control">
-                                                <option value="admin">Administrador</option>
-                                                <option value="user">Usuario</option>
+                                                <option value="conductor">Conductor</option>
                                             </select>
                                         </div>
                                         <div class="form-group text-center">

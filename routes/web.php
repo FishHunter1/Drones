@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistroEController;
+use App\Http\Controllers\ListeController;
 use App\Http\Controllers\DashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -18,13 +20,17 @@ Route::get('/authentication/register', function () {
     return view('auth.register');
 })->name('register');
 
-route::get('/dashboard', action: function (){
+route::get('/dashboard', function (){
     return view('dashboard');
 })->name('dashboard');
 
-route::get('/dashboard/forme', action: function (){
+route::get('/dashboard/forme', function (){
     return view('empleados.forme');
 })->name('forme');
+
+route::get('/dashboard/liste', function (){
+    return view('empleados.liste');
+})->name('liste');
 
 Route::prefix('/authentication')->group(function () {
     Route::post('/login', [LoginController::class, 'perform'])->name('login.perform');
@@ -32,3 +38,7 @@ Route::prefix('/authentication')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
+Route::prefix('/dashboard')->group(function () {
+    Route::post('/crear', [RegistroEController::class, 'create'])->name('RegistroE.create');
+    Route::get('/liste', [ListeController::class, 'index'])->name('Liste.index');
+});
