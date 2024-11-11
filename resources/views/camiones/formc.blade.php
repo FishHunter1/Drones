@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'formulario-empleados')
+@section('title', 'formulario-camiones')
 
 @section('content')
 
@@ -34,31 +34,37 @@
             </nav>
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="{{route('home')}}">TrailBrazer</a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li class="menu-header">Dashboard</li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                        </li>
-                        <li class="menu-header">TrailBrazer</li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link"><i class="fas fa-th-large"></i><span>sin definir aun</span></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="" class="nav-link has-dropdown" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                            <ul class="dropdown-menu">
-                              <li><a class="nav-link" href="#">Vehiculos</a></li>
-                              <li><a class="nav-link" href="#">Empleados</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                        </li>
-                    </ul>
+                  <div class="sidebar-brand">
+                    <a href="{{route('home')}}">TrailBrazer</a>
+                  </div>
+                  <div class="sidebar-brand sidebar-brand-sm">
+                    <a href="">St</a>
+                  </div>
+                  <ul class="sidebar-menu">
+                    <li class="menu-header">Dashboard</li>
+                    <li class="dropdown">
+                      <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="menu-header">TrailBrazer</li>
+                    <li class="dropdown">
+                      <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                    </li>
+                  <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+                    <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                      <i class="fas fa-rocket"></i> No Tocar
+                    </a>
+                  </div>
                 </aside>
-            </div>
+              </div>
 
             <!-- Main Content -->
             <div class="main-content">
@@ -74,50 +80,58 @@
                                     <h4>Formulario para Registro de Empleados</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('RegistroE.create') }}" method="POST">
+                                    <form action="{{ route('RegistroC.createc') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="nombre">Nombre</label>
-                                            <input type="text" name="nombre" class="form-control" placeholder="Ingresa tu nombre" required autocomplete="new-name">
+                                            <label for="placa">Placa</label>
+                                            <input type="text" name="placa" id="placa" class="form-control" placeholder="Ingresa la placa" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="apeliido">Apellido</label>
-                                            <input type="text" name="apellido" class="form-control" placeholder="Ingresa tu apellido" required autocomplete="new-apellido">
+                                            <label for="marca">Marca</label>
+                                            <input type="text" name="marca" id="marca" class="form-control" placeholder="Ingresa la marca" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="cedula">Cedula</label>
-                                            <input type="ced" name="cedula" class="form-control" placeholder="Ingresa tu cedula" required autocomplete="new-cedula">
+                                            <label for="modelo">Modelo</label>
+                                            <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Ingresa el modelo" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="telefono">Telefono</label>
-                                            <input type="tel" name="telefono" class="form-control" placeholder="Ingresa tu telefono" required autocomplete="new-telefono">
+                                            <label for="año">Año</label>
+                                            <input type="number" name="año" id="año" class="form-control" placeholder="Ingresa el año" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="direccion">Direccion</label>
-                                            <input type="direccion" name="direccion" class="form-control" placeholder="Ingresa tu direccion" required autocomplete="new-direccion">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Correo Electrónico</label>
-                                            <input type="email" name="email" class="form-control" placeholder="Ingresa tu correo" required autocomplete="new-email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Contraseña</label>
-                                            <input type="password" name="password" class="form-control" placeholder="Ingresa tu contraseña" required autocomplete="new-password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password_confirmation">Confirmar Contraseña</label>
-                                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirma la contraseña" required autocomplete="new-password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="role">Rol</label>
-                                            <select id="role" name="role" class="form-control">
-                                                <option value="conductor">Conductor</option>
+                                            <label for="estatus">Estatus</label>
+                                            <select name="estatus" id="estatus" class="form-control" required>
+                                                <option value="activo">Activo</option>
+                                                <option value="inactivo">Inactivo</option>
+                                                <option value="mantenimiento">Mantenimiento</option>
                                             </select>
                                         </div>
-                                        <div class="form-group text-center">
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                                Registrar
-                                            </button>
+                                        <div class="form-group">
+                                            <label for="tipo_combustible">Combustible</label>
+                                            <select name="tipo_combustible" id="combustible" class="form-control" required>
+                                                <option value="Diesel">Diesel</option>
+                                                <option value="Gasolina">Gasolina</option> <!-- Agregué otro valor como ejemplo -->
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kilometraje">Kilometraje</label>
+                                            <input type="number" name="kilometraje" id="kilometraje" class="form-control" placeholder="Ingresa el kilometraje" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fecha_integracion">Fecha de Integración</label>
+                                            <input type="date" name="fecha_integracion" id="fecha_integracion" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="conductor_id">Conductor</label>
+                                            <select name="conductor_id" id="conductor_id" class="form-control" required>
+                                                <option value="">Seleccionar conductor</option>
+                                                @foreach ($conductores as $conductor)
+                                                    <option value="{{ $conductor->id }}">{{ $conductor->usuario->nombre }} {{ $conductor->usuario->apellido }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Registrar vehículo</button>
                                         </div>
                                     </form>
                                 </div>

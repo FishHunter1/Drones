@@ -49,6 +49,6 @@ class RegistroEController extends Controller
             'admin_id' => auth()->user()->id, // Vincular al administrador autenticado
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Conductor creado exitosamente.');
+        return redirect()->route('liste')->with('success', 'Conductor creado exitosamente.');
     }
 }

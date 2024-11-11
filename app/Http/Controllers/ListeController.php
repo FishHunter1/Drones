@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Conductor;
-use Illuminate\Support\Facades\Auth; // Importar autenticación
+use Illuminate\Support\Facades\Auth;
 
 class ListeController extends Controller
 {

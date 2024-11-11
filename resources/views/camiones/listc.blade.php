@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Lista-Conductores')
+@section('title', 'Lista-Camiones')
 
 @section('content')
 <body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
@@ -32,74 +32,80 @@
         </nav>
         <div class="main-sidebar sidebar-style-2">
             <aside id="sidebar-wrapper">
-                <div class="sidebar-brand">
-                    <a href="{{route('home')}}">TrailBrazer</a>
-                </div>
-                <ul class="sidebar-menu">
-                    <li class="menu-header">Dashboard</li>
-                    <li class="dropdown">
-                        <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                    </li>
-                    <li class="menu-header">TrailBrazer</li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link"><i class="fas fa-th-large"></i><span>sin definir aun</span></a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="" class="nav-link has-dropdown" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                        <ul class="dropdown-menu">
-                          <li><a class="nav-link" href="#">Vehiculos</a></li>
-                          <li><a class="nav-link" href="forme">Empleados</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                    </li>
-                </ul>
+              <div class="sidebar-brand">
+                <a href="{{route('home')}}">TrailBrazer</a>
+              </div>
+              <div class="sidebar-brand sidebar-brand-sm">
+                <a href="">St</a>
+              </div>
+              <ul class="sidebar-menu">
+                <li class="menu-header">Dashboard</li>
+                <li class="dropdown">
+                  <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                </li>
+                <li class="menu-header">TrailBrazer</li>
+                <li class="dropdown">
+                  <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
+                </li>
+                <li class="dropdown active">
+                    <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                </li>
+              <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+                <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                  <i class="fas fa-rocket"></i> No Tocar
+                </a>
+              </div>
             </aside>
-        </div>
+          </div>
 
         <div class="main-content" style="flex-grow: 1;">
             <section class="section">
                 <div class="section-header">
-                    <h1 class="text-primary">Lista de Conductores</h1>
+                    <h1 class="text-primary">Lista de Camiones</h1>
                 </div>
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Conductores Registrados</h4>
+                            <h4 class="card-title">Camiones Registrados</h4>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered rounded-lg shadow-lg">
                                 <thead class="bg-primary text-white">
                                     <tr>
-                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Nombre</th>
-                                        <th class="p-3 border-b border-gray-300">Apellido</th>
-                                        <th class="p-3 border-b border-gray-300">Cédula</th>
-                                        <th class="p-3 border-b border-gray-300">Teléfono</th>
-                                        <th class="p-3 border-b border-gray-300">Dirección</th>
-                                        <th class="p-3 border-b border-gray-300 rounded-tr-lg">Estatus</th>
+                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Placa</th>
+                                        <th class="p-3 border-b border-gray-300">Marca</th>
+                                        <th class="p-3 border-b border-gray-300">Modelo</th>
+                                        <th class="p-3 border-b border-gray-300">Año</th>
+                                        <th class="p-3 border-b border-gray-300">Estatus</th>
+                                        <th class="p-3 border-b border-gray-300">Conductor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($conductores as $conductor)
+                                    @forelse ($vehiculos as $vehiculo)
                                         <tr class="hover:bg-gray-100">
-                                            <td class="p-3 border-b border-gray-300">{{ $conductor->usuario->nombre }}</td>
-                                            <td class="p-3 border-b border-gray-300">{{ $conductor->usuario->apellido }}</td>
-                                            <td class="p-3 border-b border-gray-300">{{ $conductor->url_licencia }}</td>
-                                            <td class="p-3 border-b border-gray-300">{{ $conductor->usuario->telefono }}</td>
-                                            <td class="p-3 border-b border-gray-300">{{ $conductor->usuario->direccion }}</td>
-                                            <td class="p-3 border-b border-gray-300 text-success">{{ $conductor->estatus }}</td>
+                                            <td class="p-3 border-b border-gray-300">{{ $vehiculo->placa }}</td>
+                                            <td class="p-3 border-b border-gray-300">{{ $vehiculo->marca }}</td>
+                                            <td class="p-3 border-b border-gray-300">{{ $vehiculo->modelo }}</td>
+                                            <td class="p-3 border-b border-gray-300">{{ $vehiculo->año }}</td>
+                                            <td class="p-3 border-b border-gray-300">{{ $vehiculo->estatus }}</td>
+                                            <td class="p-3 border-b border-gray-300">{{ $vehiculo->conductor->usuario->nombre }} {{ $vehiculo->conductor->usuario->apellido }}</td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="text-center text-muted">No hay conductores registrados.</td>
+                                            <td colspan="6" class="text-center text-muted">No hay camiones registrados.</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
                             </table>
                         </div>
                         <div class="card-footer text-right">
-                            <a href="{{ route('forme') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Conductor</a>
+                            <a href="{{ route('formc') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Camión</a>
                         </div>
                     </div>
                 </div>

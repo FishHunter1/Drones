@@ -34,31 +34,37 @@
             </nav>
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="{{route('home')}}">TrailBrazer</a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li class="menu-header">Dashboard</li>
-                        <li class="dropdown">
-                            <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                        </li>
-                        <li class="menu-header">TrailBrazer</li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link"><i class="fas fa-th-large"></i><span>sin definir aun</span></a>
-                        </li>
-                        <li class="dropdown active">
-                            <a href="" class="nav-link has-dropdown" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                            <ul class="dropdown-menu">
-                              <li><a class="nav-link" href="#">Vehiculos</a></li>
-                              <li><a class="nav-link" href="#">Empleados</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                        </li>
-                    </ul>
+                  <div class="sidebar-brand">
+                    <a href="{{route('home')}}">TrailBrazer</a>
+                  </div>
+                  <div class="sidebar-brand sidebar-brand-sm">
+                    <a href="">St</a>
+                  </div>
+                  <ul class="sidebar-menu">
+                    <li class="menu-header">Dashboard</li>
+                    <li class="dropdown">
+                      <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="menu-header">TrailBrazer</li>
+                    <li class="dropdown active">
+                      <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                    </li>
+                  <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+                    <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                      <i class="fas fa-rocket"></i> No Tocar
+                    </a>
+                  </div>
                 </aside>
-            </div>
+              </div>
 
             <!-- Main Content -->
             <div class="main-content">

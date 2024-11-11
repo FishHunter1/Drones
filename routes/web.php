@@ -8,6 +8,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistroEController;
 use App\Http\Controllers\ListeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RegistroCController;
+use App\Http\Controllers\ListcController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', HomeController::class)->name('home');
@@ -32,6 +34,14 @@ route::get('/dashboard/liste', function (){
     return view('empleados.liste');
 })->name('liste');
 
+Route::get('/dashboard/formc', function (){
+    return view('camiones.formc');
+})->name('formc');
+
+Route::get('/dashboard/listc', function (){
+    return view('camiones.listc');
+})->name('listc');
+
 Route::prefix('/authentication')->group(function () {
     Route::post('/login', [LoginController::class, 'perform'])->name('login.perform');
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
@@ -41,4 +51,7 @@ Route::prefix('/authentication')->group(function () {
 Route::prefix('/dashboard')->group(function () {
     Route::post('/crear', [RegistroEController::class, 'create'])->name('RegistroE.create');
     Route::get('/liste', [ListeController::class, 'index'])->name('liste');
+    Route::post('/crearc', [RegistroCController::class, 'createc'])->name('RegistroC.createc');
+    Route::get('/formc', [RegistroCController::class, 'showForm'])->name('formc');
+    Route::get('/listc', [ListcController::class,'indexi'])->name('listc');
 });

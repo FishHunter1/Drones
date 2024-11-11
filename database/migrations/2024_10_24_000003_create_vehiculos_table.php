@@ -15,13 +15,18 @@ class CreateVehiculosTable extends Migration
             $table->string('modelo');
             $table->integer('año');
             $table->enum('estatus', ['activo', 'inactivo', 'mantenimiento']);
-            $table->string('tipo_combustible');
+            $table->string('tipo_combustible')->nullable(false);
             $table->integer('kilometraje');
             $table->date('fecha_integracion');
+            // Relación con el conductor
             $table->foreignId('conductor_id')
                 ->nullable()
                 ->constrained('conductores')
                 ->onDelete('set null');
+            // Relación con el administrador
+            $table->foreignId('admin_id')
+                ->constrained('usuarios')
+                ->onDelete('cascade'); // Eliminar vehículos si el administrador es eliminado
 
             $table->double('longitud');
             $table->double('latitud');
