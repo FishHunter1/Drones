@@ -40,5 +40,5 @@ Route::prefix('/authentication')->group(function () {
 
 Route::prefix('/dashboard')->group(function () {
     Route::post('/crear', [RegistroEController::class, 'create'])->name('RegistroE.create');
-    Route::get('/liste', [ListeController::class, 'index'])->name('Liste.index');
+    Route::get('/liste', [ListeController::class, 'index'])->name('liste');
 });

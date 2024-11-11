@@ -12,7 +12,7 @@ class CreateConductoresTable extends Migration
             $table->id();
             $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->string('url_licencia');
-            $table->enum('estatus', ['activo', 'inactivo']);
+            $table->enum('estatus', ['Activo', 'Inactivo']);
             $table->foreignId('admin_id')->constrained('usuarios')->onDelete('cascade'); // Agregamos la columna admin_id
             $table->timestamps();
         });

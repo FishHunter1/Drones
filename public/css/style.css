@@ -2731,3 +2731,44 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
     }
     }
 /*# sourceMappingURL=style.css.map */
+
+/* Asegura que el submenú no se muestre inicialmente */
+.dropdown-menu {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 5px;
+    position: absolute;
+    left: 100%; /* Despliega el submenú a la derecha */
+    top: 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+/* Estilo cuando el mouse pasa sobre el menú principal */
+.nav-link.has-dropdown:hover .dropdown-menu {
+    display: block; /* Muestra el submenú cuando el mouse pasa por encima */
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 200px; /* Ancho mínimo para el submenú */
+    z-index: 1000; /* Asegura que el submenú esté sobre otros elementos */
+}
+
+/* Opcional: agrega un color de fondo a la opción seleccionada o activada */
+.nav-link.active {
+    background-color: #6790ef; /* Color de fondo cuando el enlace está activo */
+    color: white; /* Cambia el color del texto cuando está activo */
+}
+
+/* Alineación correcta para el submenú a la derecha */
+.dropdown-menu-right {
+    right: 0; /* Para que se alinee correctamente */
+}
+
+/* Hover adicional para los items del submenú */
+.dropdown-menu li a:hover {
+    background-color: #f6f7fe;
+    color: #6790ef;
+}

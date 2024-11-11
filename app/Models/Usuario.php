@@ -36,7 +36,7 @@ class Usuario extends Authenticatable
             // Buscar el rol de Usuario predeterminado
             if (empty($usuario->role_id)) {
                 $defaultRole = Role::where('nombre', 'Usuario')->first();
-                $usuario->role_id = $defaultRole->id ?? null; // Asignar el rol de Usuario si existe
+                $usuario->role_id = $defaultRole->id ?? null;
             }
         });
     }

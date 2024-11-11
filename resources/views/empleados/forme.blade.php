@@ -40,13 +40,13 @@
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                            <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                         </li>
                         <li class="menu-header">TrailBrazer</li>
                         <li class="dropdown">
                             <a href="#" class="nav-link"><i class="fas fa-th-large"></i><span>sin definir aun</span></a>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="" class="nav-link has-dropdown" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
                             <ul class="dropdown-menu">
                               <li><a class="nav-link" href="#">Vehiculos</a></li>

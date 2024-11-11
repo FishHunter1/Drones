@@ -12,16 +12,14 @@ class Conductor extends Model
     protected $table = 'conductores';
 
     protected $fillable = [
-        'usuario_id', // Este es el campo con el ID de usuario
+        'usuario_id',
         'url_licencia',
         'estatus',
         'admin_id',
     ];
 
-    // Relación con el modelo Usuario
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class, 'usuario_id');  // Aquí, 'usuario_id' es el campo en la tabla de conductores
+        return $this->belongsTo(Usuario::class, 'usuario_id');
     }
 }
-
