@@ -72,4 +72,5 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/formc', [RegistroCController::class, 'showForm'])->name('formc');
     Route::get('/listc', [ListcController::class,'indexi'])->name('listc');
     Route::get('/reportesm', [ReportesMController::class, 'showForma'])->name('reportesm');
+    Route::post('/crearm', [ReportesMController::class, 'createm'])->name('ReportesM.createm');
 });

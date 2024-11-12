@@ -80,7 +80,7 @@
                                     <h4>Formulario para Registro de Empleados</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('RegistroC.createc') }}" method="POST">
+                                    <form action="{{ route('ReportesM.createm') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label for="vehiculo_id">Vehículo</label>
@@ -92,27 +92,27 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="fecha_Mantenimiento">Fecha del Mantenimiento</label>
-                                            <input type="date" name="fecha_Mantenimiento" id="fecha_Mantenimiento" class="form-control" required>
+                                            <label for="fecha">Fecha del Mantenimiento</label>
+                                            <input type="date" name="fecha" id="fecha" class="form-control" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="tipo_mantenimiento">Tipo de mantenimiento</label>
-                                            <input type="text" name="placa" id="tipo_mantenimiento" class="form-control" placeholder="Ingresa el tipo de mantenimiento" required>
+                                            <label for="tipo">Tipo de mantenimiento</label>
+                                            <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Ingresa el tipo de mantenimiento" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="descripcion">Descripcion del mantenimiento</label>
                                             <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Ingresa la descripcion" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="provedor">Lugar donde se realizo el mantenimiento</label>
-                                            <input type="text" name="provedor" id="provedor" class="form-control" placeholder="Ingresa lugar donde realizo el mantenimiento" required>
+                                            <label for="proveedor">Lugar donde se realizó el mantenimiento</label>
+                                            <input type="text" name="proveedor" id="proveedor" class="form-control" placeholder="Ingresa lugar donde realizo el mantenimiento" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="precio">Costo del mantenimiento</label>
                                             <input type="number" name="precio" id="precio" class="form-control" placeholder="Ingresa el Costo del mantenimiento" required>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Registrar vehículo</button>
+                                            <button type="submit" class="btn btn-primary">Registrar Mantenimiento</button>
                                         </div>
                                     </form>
                                 </div>

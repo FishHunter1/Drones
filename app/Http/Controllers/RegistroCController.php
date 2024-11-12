@@ -24,11 +24,7 @@ class RegistroCController extends Controller
     public function createc(Request $request)
     {
         Log::info('Entrando en el método createc del RegistroCController.');
-
-        // Log para ver los datos que llegan
         Log::info('Datos recibidos por el formulario: ', $request->all());
-
-        // Validación de los datos de entrada
         try {
             $request->validate([
                 'placa' => 'required|string|max:6',
@@ -92,7 +88,7 @@ class RegistroCController extends Controller
 
         } catch (\Exception $e) {
             Log::error('Error al crear el vehículo.', ['error' => $e->getMessage()]);
-            return redirect()->route('formc')->with('error', 'Hubo un error al crear el vehículo.');
+            return redirect()->route('listc')->with('error', 'Hubo un error al crear el vehículo.');
         }
     }
 
