@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistroEController;
 use App\Http\Controllers\ListeController;
+use App\Http\Controllers\ListrController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistroCController;
 use App\Http\Controllers\ListcController;
@@ -55,6 +56,10 @@ Route::get('/dashboard/reportesi', function (){
 Route::get('/dashboard/reportesm', function (){
     return view('reportes.reportesm');
 })->name('reportesm');
+
+Route::get('/dashboard/listr', function (){
+    return view('reportes.listr');
+})->name('listr');
 
 Route::get('/dashboard/mapa', function (){
     return view('mapa.mapa');
