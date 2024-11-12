@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistroCController;
 use App\Http\Controllers\ListcController;
 use App\Http\Controllers\ReportesMController;
+use App\Http\Controllers\ReportesIController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', HomeController::class)->name('home');
@@ -73,4 +74,6 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/listc', [ListcController::class,'indexi'])->name('listc');
     Route::get('/reportesm', [ReportesMController::class, 'showForma'])->name('reportesm');
     Route::post('/crearm', [ReportesMController::class, 'createm'])->name('ReportesM.createm');
+    Route::get('/reportesi', [ReportesIController::class,'showformi'])->name('reportesi');
+    Route::post('/creari', [ReportesIController::class,'createi'])->name('ReportesI.createi');
 });

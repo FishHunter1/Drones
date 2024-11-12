@@ -11,12 +11,15 @@ class ReportesMController extends Controller
 {
     public function showForma()
     {
-        // Obtener todos los vehículos disponibles
-        $vehiculos = Vehiculo::all();
-
-        // Retornar la vista con los vehículos disponibles
+        $user = Auth::user();
+        if ($user->role == 'Administrador') {
+            $vehiculos = Vehiculo::all();
+        } else {
+            $vehiculos = Vehiculo::where('admin_id', $user->id)->get();
+        }
         return view('reportes.reportesm', compact('vehiculos'));
     }
+
 
     public function createm(Request $request)
     {
