@@ -205,7 +205,7 @@
     line-height: 1.2;
     color: color(muted);
   }
-  &.card-statistic-1 .card-body, 
+  &.card-statistic-1 .card-body,
   &.card-statistic-2 .card-body {
     padding-top: 0;
   }
@@ -357,7 +357,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {  
+@include media-breakpoint-down(xs) {
   .card {
     &.card-large-icons {
       display: inline-block;
@@ -386,7 +386,7 @@
   }
 }
 
-@include media-breakpoint-only(md) {  
+@include media-breakpoint-only(md) {
   .card {
     .card-stats {
       .card-stats-items {
