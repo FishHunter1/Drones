@@ -41,9 +41,9 @@ class ReportesMController extends Controller
             'descripcion' => $request->descripcion,
             'proveedor' => $request->proveedor,
             'precio' => $request->precio,
-            'admin_id' => Auth::id(), // Relacionado con el admin que crea el reporte
+            'admin_id' => Auth::id(),
         ]);
 
-        return redirect()->route('reportesm')->with('success', 'Reporte de mantenimiento creado exitosamente.');
+        return redirect()->route('listr')->with('success', 'Reporte de mantenimiento creado exitosamente.');
     }
 }

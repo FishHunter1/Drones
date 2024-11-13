@@ -81,4 +81,5 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/crearm', [ReportesMController::class, 'createm'])->name('ReportesM.createm');
     Route::get('/reportesi', [ReportesIController::class,'showformi'])->name('reportesi');
     Route::post('/creari', [ReportesIController::class,'createi'])->name('ReportesI.createi');
+    Route::get('/listr', [ListrController::class,'indexr'])->name('listr');
 });

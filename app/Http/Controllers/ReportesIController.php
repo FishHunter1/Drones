@@ -47,6 +47,6 @@ class ReportesIController extends Controller
             'admin_id' => Auth::id(),
         ]);
 
-        return redirect()->route('reportes.reportesi')->with('success', 'Reporte de incidente creado exitosamente.');
+        return redirect()->route('listr')->with('success', 'Reporte de incidente creado exitosamente.');
     }
 }

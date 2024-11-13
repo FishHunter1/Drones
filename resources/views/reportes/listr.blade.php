@@ -51,7 +51,7 @@
                     <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
                 </li>
                 <li class="dropdown active">
-                    <a href="{{route('reportesm')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
@@ -78,21 +78,59 @@
                             <table class="table table-striped table-bordered rounded-lg shadow-lg">
                                 <thead class="bg-primary text-white">
                                     <tr>
-                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Placa</th>
-                                        <th class="p-3 border-b border-gray-300">Marca</th>
-                                        <th class="p-3 border-b border-gray-300">Modelo</th>
-                                        <th class="p-3 border-b border-gray-300">Año</th>
-                                        <th class="p-3 border-b border-gray-300">Estatus</th>
-                                        <th class="p-3 border-b border-gray-300">Conductor</th>
+                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Vehículo</th>
+                                        <th class="p-3 border-b border-gray-300">Fecha</th>
+                                        <th class="p-3 border-b border-gray-300">Tipo</th>
+                                        <th class="p-3 border-b border-gray-300">Descripción</th>
+                                        <th class="p-3 border-b border-gray-300">Proveedor</th>
+                                        <th class="p-3 border-b border-gray-300">Precio</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    @foreach($reportesM as $reporte)
+                                    <tr>
+                                        <td>{{ $reporte->vehiculo->marca }} - {{ $reporte->vehiculo->placa }}</td>
+                                        <td>{{ $reporte->fecha }}</td>
+                                        <td>{{ $reporte->tipo }}</td>
+                                        <td>{{ $reporte->descripcion }}</td>
+                                        <td>{{ $reporte->proveedor }}</td>
+                                        <td>{{ $reporte->precio }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <div class="card-footer text-right">
                             <a href="{{ route('reportesm') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Reporte Mantenimiento</a>
+                        </div>
+                        <div class="card-header">
+                            <h4 class="card-title">Reportes Registrados</h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-bordered rounded-lg shadow-lg">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Vehículo</th>
+                                        <th class="p-3 border-b border-gray-300">Conductor</th>
+                                        <th class="p-3 border-b border-gray-300">Fecha</th>
+                                        <th class="p-3 border-b border-gray-300">Tipo</th>
+                                        <th class="p-3 border-b border-gray-300">Descripción</th>
+                                        <th class="p-3 border-b border-gray-300">Reporte de Daños</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($reportesI as $reporte)
+                                        <tr>
+                                            <td>{{ $reporte->vehiculo->marca }} - {{ $reporte->vehiculo->placa }}</td>
+                                            <td>{{ $reporte->conductor->usuario->nombre }} {{ $reporte->conductor->usuario->apellido }}</td>
+                                            <td>{{ $reporte->fecha }}</td>
+                                            <td>{{ $reporte->tipo }}</td>
+                                            <td>{{ $reporte->descripcion }}</td>
+                                            <td>{{ $reporte->reporte_daños }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                         <div class="card-footer text-right">
                             <a href="{{ route('reportesi') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Reporte Incidente</a>
