@@ -2614,7 +2614,7 @@ body.layout-3 .main-footer {
   padding: 20px 30px 20px 280px;
   margin-top: 40px;
   color: #000;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #000;
   display: inline-block;
   width: 100%; }
   .main-footer .footer-left {
