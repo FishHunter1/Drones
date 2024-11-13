@@ -40,22 +40,26 @@
               </div>
               <ul class="sidebar-menu">
                 <li class="menu-header">Dashboard</li>
-                <li class="dropdown">
+                <li class="dropdown active">
                   <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 </li>
-                <li class="menu-header">TrailBrazer</li>
-                <li class="dropdown">
-                  <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
-                </li>
-                <li class="dropdown">
-                    <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
-                </li>
-                <li class="dropdown active">
-                    <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                </li>
+                @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
+                    <li class="menu-header">TrailBrazer</li>
+                    @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
+                        <li class="dropdown">
+                        <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
+                        </li>
+                    @endif
+                    <li class="dropdown">
+                        <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    </li>
+                    <li class="dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                    </li>
+                @endif
               <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                 <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
                   <i class="fas fa-rocket"></i> No Tocar
@@ -72,7 +76,7 @@
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Reportes Registrados</h4>
+                            <h4 class="card-title">Reportes de Mantenimientos</h4>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered rounded-lg shadow-lg">
@@ -100,11 +104,13 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="card-footer text-right">
-                            <a href="{{ route('reportesm') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Reporte Mantenimiento</a>
-                        </div>
+                        @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
+                            <div class="card-footer text-right">
+                                <a href="{{ route('reportesm') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Reporte Mantenimiento</a>
+                            </div>
+                        @endif
                         <div class="card-header">
-                            <h4 class="card-title">Reportes Registrados</h4>
+                            <h4 class="card-title">Reportes de Incidentes Registrados</h4>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered rounded-lg shadow-lg">

@@ -1753,7 +1753,7 @@ a.dropdown-item {
       margin-left: 60px; }
       .dropdown-list .dropdown-item .dropdown-item-desc b {
         font-weight: 600;
-        color: #fff; }
+        color: #000; }
       .dropdown-list .dropdown-item .dropdown-item-desc p {
         margin-bottom: 0; }
     .dropdown-list .dropdown-item:focus {

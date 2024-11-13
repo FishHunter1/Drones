@@ -65,6 +65,9 @@ Route::get('/dashboard/mapa', function (){
     return view('mapa.mapa');
 })->name('mapa');
 
+
+Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
+
 Route::prefix('/authentication')->group(function () {
     Route::post('/login', [LoginController::class, 'perform'])->name('login.perform');
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');

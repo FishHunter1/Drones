@@ -43,19 +43,21 @@
                 <li class="dropdown">
                   <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 </li>
-                <li class="menu-header">TrailBrazer</li>
-                <li class="dropdown">
-                  <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
-                </li>
-                <li class="dropdown active">
-                    <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
-                </li>
-                <li class="dropdown">
-                    <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                </li>
+                    <li class="menu-header">TrailBrazer</li>
+                    @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
+                        <li class="dropdown">
+                        <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
+                        </li>
+                    @endif
+                    <li class="dropdown active">
+                        <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    </li>
+                    <li class="dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                    </li>
               <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                 <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
                   <i class="fas fa-rocket"></i> No Tocar
@@ -104,9 +106,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
                         <div class="card-footer text-right">
                             <a href="{{ route('formc') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Camión</a>
                         </div>
+                        @endif
                     </div>
                 </div>
             </section>
