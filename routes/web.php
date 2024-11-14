@@ -13,6 +13,7 @@ use App\Http\Controllers\RegistroCController;
 use App\Http\Controllers\ListcController;
 use App\Http\Controllers\ReportesMController;
 use App\Http\Controllers\ReportesIController;
+use App\Http\Controllers\MapaController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', HomeController::class)->name('home');
@@ -85,4 +86,6 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/reportesi', [ReportesIController::class,'showformi'])->name('reportesi');
     Route::post('/creari', [ReportesIController::class,'createi'])->name('ReportesI.createi');
     Route::get('/listr', [ListrController::class,'indexr'])->name('listr');
+    Route::get('/mapa', [MapaController::class, 'showMapa'])->name('mapa');
+    Route::get('/ubicacion', [MapaController::class, 'getUbicacionVehiculo']);
 });

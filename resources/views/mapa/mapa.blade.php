@@ -1,10 +1,52 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Dashboard')
+@section('title', 'Mapa')
+
+@section('cosasmapa')
+
+<head>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKPIAi_xftVsfEB91l0FbEyadWxBzkWgs"></script>
+  <script>
+      let map, marker;
+
+      function initMap() {
+          const initialPosition = { lat: 7.116816, lng: -73.105240 }; // Example starting position
+
+          map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 13,
+              center: initialPosition
+          });
+
+          marker = new google.maps.Marker({
+              position: initialPosition,
+              map: map,
+              title: "Ubicación del vehículo"
+          });
+
+          // Start fetching vehicle location updates
+          fetchLocationUpdates();
+      }
+
+      function updateMarker(position) {
+          marker.setPosition(position);
+          map.setCenter(position);
+      }
+
+      function fetchLocationUpdates() {
+          setInterval(async () => {
+              const response = await fetch('/location');
+              const data = await response.json();
+              updateMarker({ lat: data.lat, lng: data.lng });
+          }, 3000); // Fetch location every 3 seconds
+      }
+  </script>
+</head>
+
+@endsection
 
 @section('content')
 
-<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
+<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200" onload="initMap()">
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
           <div class="navbar-bg"></div>
@@ -204,7 +246,7 @@
                 </div>
               </li>
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="images/avatar/avatar-1.png" class="rounded-circle mr-1">
+                <img alt="image" src="{{asset('images/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
                 <div class="d-sm-none d-lg-inline-block"> {{ $authUser ? $authUser->nombre : 'Invitado' }} </div></a>
                 <div class="dropdown-menu dropdown-menu-right">
                   <div class="dropdown-title">Logged in 5 min ago</div>
@@ -246,10 +288,10 @@
                     <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                  <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
                 </li>
               <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                 <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
@@ -265,6 +307,7 @@
 
 
                 <!-- mapa aqui -->
+                <div id="map" style="height: 600px; width: 100%;"></div>
 
             </section>
           </div>

@@ -57,7 +57,7 @@
                         <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
                     </li>
                     <li class="dropdown">
-                    <a href="#" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                    <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
                     </li>
                 @endif
               <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
