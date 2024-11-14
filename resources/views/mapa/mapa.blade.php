@@ -33,11 +33,11 @@
       }
 
       function fetchLocationUpdates() {
-          setInterval(async () => {
-              const response = await fetch('/location');
-              const data = await response.json();
-              updateMarker({ lat: data.lat, lng: data.lng });
-          }, 3000); // Fetch location every 3 seconds
+        setInterval(async () => {
+        const response = await fetch('/ubicacion');
+        const data = await response.json();
+        updateMarker({ lat: data.lat, lng: data.lng });
+        }, 3000); // Poll every 3 seconds
       }
   </script>
 </head>
@@ -278,7 +278,7 @@
               <ul class="sidebar-menu">
                 <li class="menu-header">Dashboard</li>
                 <li class="dropdown active">
-                  <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                  <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 </li>
                 <li class="menu-header">TrailBrazer</li>
                 <li class="dropdown">
