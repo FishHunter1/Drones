@@ -289,7 +289,7 @@
                         <div class="alert alert-info">
                             <h4>¡No esperes más! Suscríbete ahora y comienza a gestionar tu flota sin limitaciones.</h4>
                             <p>Haz clic en el botón abajo para pagar y comenzar a disfrutar de todos los beneficios que TrailBrazer tiene para ofrecerte.</p>
-                            <a href="#" class="btn btn-success"><i class="fas fa-credit-card"></i> Pagar Suscripción</a>
+                            <a href="/checkout" class="btn btn-success"><i class="fas fa-credit-card"></i> Pagar Suscripción</a>
                         </div>
                     @endif
                 </div>

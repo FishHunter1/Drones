@@ -15,6 +15,7 @@ use App\Http\Controllers\ReportesMController;
 use App\Http\Controllers\ReportesIController;
 use App\Http\Controllers\MapaController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\CheckoutController;
 
 Route::get('/', HomeController::class)->name('home');
 
@@ -88,4 +89,10 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/listr', [ListrController::class,'indexr'])->name('listr');
     Route::get('/mapa', [MapaController::class, 'showMapa'])->name('mapa');
     Route::get('/ubicacion', [MapaController::class, 'getUbicacionVehiculo']);
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
+    Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout');
+    Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
 });
