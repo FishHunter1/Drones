@@ -28,9 +28,7 @@
     <!-- Template JS File -->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-
-    @yield('cosasmapa')
-
+    
 </head>
 
 <body>
@@ -52,5 +50,42 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKPIAi_xftVsfEB91l0FbEyadWxBzkWgs"></script>
+    <script>
+        let map, marker;
+
+        function initMap() {
+            const initialPosition = { lat: 7.116816, lng: -73.105240 };
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: initialPosition
+            });
+
+            marker = new google.maps.Marker({
+                position: initialPosition,
+                map: map,
+                title: "Ubicación del vehículo"
+            });
+
+            fetchLocationUpdates();
+        }
+
+        function updateMarker(position) {
+            marker.setPosition(position);
+            map.setCenter(position);
+        }
+
+        function fetchLocationUpdates() {
+            setInterval(async () => {
+                const response = await fetch('/ubicacion');
+                const data = await response.json();
+                updateMarker({ lat: data.lat, lng: data.lng });
+            }, 3000);
+        }
+    </script>
+    @yield('executeMapScript')
+
 </body>
 </html>

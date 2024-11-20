@@ -14,7 +14,7 @@ use App\Http\Controllers\ListcController;
 use App\Http\Controllers\ReportesMController;
 use App\Http\Controllers\ReportesIController;
 use App\Http\Controllers\MapaController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\CrearutaController;
 use App\Http\Controllers\CheckoutController;
 
 Route::get('/', HomeController::class)->name('home');
@@ -67,6 +67,14 @@ Route::get('/dashboard/mapa', function (){
     return view('mapa.mapa');
 })->name('mapa');
 
+Route::get('/dashboard/listaru', function (){
+    return view('rutas.listaru');
+})->name('listaru');
+
+Route::get('/dashboard/crearuta', function (){
+    return view('rutas.crearuta');
+})->name('crearuta');
+
 
 Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
 
@@ -88,7 +96,9 @@ Route::prefix('/dashboard')->group(function () {
     Route::post('/creari', [ReportesIController::class,'createi'])->name('ReportesI.createi');
     Route::get('/listr', [ListrController::class,'indexr'])->name('listr');
     Route::get('/mapa', [MapaController::class, 'showMapa'])->name('mapa');
-    Route::get('/ubicacion', [MapaController::class, 'getUbicacionVehiculo']);
+    Route::get('/ubicacion', [MapaController::class, 'getUbicacionVehiculo'])->name('ubicacion');
+    Route::get('/crearuta', [CrearutaController::class,'showformo'])->name('crearuta');
+    Route::post('/crearuta', [CrearutaController::class,'creaturax'])->name('Crearuta.creaturax');
 });
 
 Route::middleware(['auth'])->group(function () {

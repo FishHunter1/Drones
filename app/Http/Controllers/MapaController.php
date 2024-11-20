@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class MapaController extends Controller
 {
@@ -13,6 +14,7 @@ class MapaController extends Controller
 
     public function showMapa()
     {
+        Log::info('Vista del mapa cargada correctamente.');
         return view('mapa.mapa');
     }
 
@@ -23,19 +25,43 @@ class MapaController extends Controller
 
         $url = "https://personalizado-12eisw56o06.azureiotcentral.com/api/devices/{$deviceId}/telemetry";
 
-        $response = Http::withHeaders([
-            'Authorization' => "Bearer {$apiToken}",
-        ])->get($url);
+        Log::info('Iniciando solicitud HTTP hacia Azure IoT Central.', [
+            'url' => $url,
+            'deviceId' => $deviceId
+        ]);
 
-        if ($response->successful()) {
-            $telemetry = $response->json();
+        try {
+            $response = Http::withHeaders([
+                'Authorization' => "Bearer {$apiToken}",
+            ])->get($url);
 
-            return response()->json([
-                'lat' => $telemetry['latitude'] ?? 0,
-                'lng' => $telemetry['longitude'] ?? 0,
+            Log::info('Respuesta recibida de Azure IoT Central.', [
+                'status' => $response->status(),
+                'body' => $response->body()
+            ]);
+
+            if ($response->successful()) {
+                $telemetry = $response->json();
+
+                Log::info('Datos de telemetría procesados correctamente.', $telemetry);
+
+                return response()->json([
+                    'lat' => $telemetry['latitude'] ?? $this->latitud,
+                    'lng' => $telemetry['longitude'] ?? $this->longitud,
+                ]);
+            }
+
+            Log::warning('La solicitud a Azure IoT Central no fue exitosa.', [
+                'status' => $response->status(),
+                'body' => $response->body()
+            ]);
+
+        } catch (\Exception $e) {
+            Log::error('Excepción al realizar la solicitud HTTP.', [
+                'error' => $e->getMessage()
             ]);
         }
 
-        return response()->json(['error' => 'No se pudieron obtener los datos'], 500);
+        return response()->json(['error' => 'No se pudieron obtener los datos de telemetría'], 500);
     }
 }

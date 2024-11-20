@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Lista-Reportes')
+@section('title', 'Lista-Rutas')
 
 @section('content')
 <body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
@@ -54,7 +54,7 @@
                         <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
+                        <a href="{{route('listaru')}}" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
@@ -79,7 +79,7 @@
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Reportes de Mantenimientos</h4>
+                            <h4 class="card-title">Rutas Asignadas</h4>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered rounded-lg shadow-lg">
@@ -94,16 +94,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($reportesM as $reporte)
-                                    <tr>
-                                        <td>{{ $reporte->vehiculo->marca }} - {{ $reporte->vehiculo->placa }}</td>
-                                        <td>{{ $reporte->fecha }}</td>
-                                        <td>{{ $reporte->tipo }}</td>
-                                        <td>{{ $reporte->descripcion }}</td>
-                                        <td>{{ $reporte->proveedor }}</td>
-                                        <td>{{ $reporte->precio }}</td>
-                                    </tr>
-                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -112,38 +103,6 @@
                                 <a href="{{ route('reportesm') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Reporte Mantenimiento</a>
                             </div>
                         @endif
-                        <div class="card-header">
-                            <h4 class="card-title">Reportes de Incidentes Registrados</h4>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-striped table-bordered rounded-lg shadow-lg">
-                                <thead class="bg-primary text-white">
-                                    <tr>
-                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Vehículo</th>
-                                        <th class="p-3 border-b border-gray-300">Conductor</th>
-                                        <th class="p-3 border-b border-gray-300">Fecha</th>
-                                        <th class="p-3 border-b border-gray-300">Tipo</th>
-                                        <th class="p-3 border-b border-gray-300">Descripción</th>
-                                        <th class="p-3 border-b border-gray-300">Reporte de Daños</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($reportesI as $reporte)
-                                        <tr>
-                                            <td>{{ $reporte->vehiculo->marca }} - {{ $reporte->vehiculo->placa }}</td>
-                                            <td>{{ $reporte->conductor->usuario->nombre }} {{ $reporte->conductor->usuario->apellido }}</td>
-                                            <td>{{ $reporte->fecha }}</td>
-                                            <td>{{ $reporte->tipo }}</td>
-                                            <td>{{ $reporte->descripcion }}</td>
-                                            <td>{{ $reporte->reporte_daños }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="card-footer text-right">
-                            <a href="{{ route('reportesi') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Reporte Incidente</a>
-                        </div>
                     </div>
                 </div>
             </section>

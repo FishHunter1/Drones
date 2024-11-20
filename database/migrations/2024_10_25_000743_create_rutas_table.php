@@ -15,6 +15,7 @@ class CreateRutasTable extends Migration
             $table->string('ubicacion_inicial');
             $table->string('ubicacion_final');
             $table->datetime('hora_inicio');
+            $table->datetime('hora_final');
             $table->timestamps();
         });
     }

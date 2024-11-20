@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Para usar Auth
-use App\Models\Conductor; // Para acceder al modelo de conductores
-use App\Models\ReportesMantenimiento; // Para acceder al modelo de reportes de mantenimiento
-use App\Models\ReportesIncidentes; // Para acceder al modelo de reportes de incidentes
+use Illuminate\Support\Facades\Auth;
+use App\Models\Conductor;
+use App\Models\ReportesMantenimiento;
+use App\Models\ReportesIncidentes;
+use App\Models\Vehiculo;
 
 class DashboardController extends Controller
 {
@@ -21,7 +22,10 @@ class DashboardController extends Controller
         $totalReportes = ReportesMantenimiento::where('admin_id', $adminId)->count()
                          + ReportesIncidentes::where('admin_id', $adminId)->count();
 
+        // Obtener la cantidad total de camiones del admin
+        $totalCamiones = Vehiculo::where('admin_id', $adminId)->count();
+
         // Pasar los datos a la vista
-        return view('dashboard', compact('totalConductores', 'totalReportes'));
+        return view('dashboard', compact('totalConductores', 'totalReportes','totalCamiones'));
     }
 }

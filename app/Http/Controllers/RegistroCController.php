@@ -84,7 +84,7 @@ class RegistroCController extends Controller
 
             Log::info('Vehículo creado exitosamente.', ['vehiculo' => $vehiculo]);
 
-            return redirect()->route('formc')->with('success', 'Vehículo creado exitosamente.');
+            return redirect()->route('listc')->with('success', 'Vehículo creado exitosamente.');
 
         } catch (\Exception $e) {
             Log::error('Error al crear el vehículo.', ['error' => $e->getMessage()]);

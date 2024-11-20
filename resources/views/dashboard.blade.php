@@ -147,9 +147,13 @@
                     <i class="fas fa-cog"></i> Configuraciones
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="{{route('logout')}}" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Salir
-                  </a>
+                  <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                   <i class="fas fa-sign-out-alt"></i> Salir
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
               </li>
             </ul>
@@ -176,6 +180,9 @@
                     @endif
                     <li class="dropdown">
                         <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
@@ -211,6 +218,22 @@
                                     </div>
                                     <div class="card-body">
                                         {{ $totalConductores }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="far fa-file"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Camiones</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $totalCamiones }}
                                     </div>
                                 </div>
                             </div>

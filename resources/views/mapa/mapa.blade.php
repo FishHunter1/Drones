@@ -1,53 +1,16 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Mapa')
+@section('title', 'Dashboard')
 
-@section('cosasmapa')
-
-<head>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKPIAi_xftVsfEB91l0FbEyadWxBzkWgs"></script>
-  <script>
-      let map, marker;
-
-      function initMap() {
-          const initialPosition = { lat: 7.116816, lng: -73.105240 }; // Example starting position
-
-          map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 13,
-              center: initialPosition
-          });
-
-          marker = new google.maps.Marker({
-              position: initialPosition,
-              map: map,
-              title: "Ubicación del vehículo"
-          });
-
-          // Start fetching vehicle location updates
-          fetchLocationUpdates();
-      }
-
-      function updateMarker(position) {
-          marker.setPosition(position);
-          map.setCenter(position);
-      }
-
-      function fetchLocationUpdates() {
-        setInterval(async () => {
-        const response = await fetch('/ubicacion');
-        const data = await response.json();
-        updateMarker({ lat: data.lat, lng: data.lng });
-        }, 3000); // Poll every 3 seconds
-      }
-  </script>
-</head>
-
+@section('executeMapScript')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initMap();
+    });
+</script>
 @endsection
 
 @section('content')
-
-<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200" onload="initMap()">
-    <div id="app">
         <div class="main-wrapper main-wrapper-1">
           <div class="navbar-bg"></div>
           <nav class="navbar navbar-expand-lg main-navbar">
@@ -65,11 +28,11 @@
                     Histories
                   </div>
                   <div class="search-item">
-                    <a href="#">How to hack NASA using CSS</a>
+                    <a href="#">Como robar un banco</a>
                     <a href="#" class="search-close"><i class="fas fa-times"></i></a>
                   </div>
                   <div class="search-item">
-                    <a href="#">Kodinger.com</a>
+                    <a href="#">uwucate.com</a>
                     <a href="#" class="search-close"><i class="fas fa-times"></i></a>
                   </div>
                   <div class="search-item">
@@ -81,20 +44,20 @@
                   </div>
                   <div class="search-item">
                     <a href="#">
-                      <img class="mr-3 rounded" width="30" src="images/products/product-3-50.png" alt="product">
-                      oPhone S9 Limited Edition
+                      <img class="mr-3 rounded" width="30" src="{{asset('images/products/product-3-50.png')}}" alt="product">
+                      Alvaro Alexa compralo ya!
                     </a>
                   </div>
                   <div class="search-item">
                     <a href="#">
-                      <img class="mr-3 rounded" width="30" src="images/products/product-2-50.png" alt="product">
-                      Drone X2 New Gen-7
+                      <img class="mr-3 rounded" width="30" src="{{asset('images/products/product-2-50.png')}}" alt="product">
+                      Niños haitianos a mitad de precio!
                     </a>
                   </div>
                   <div class="search-item">
                     <a href="#">
-                      <img class="mr-3 rounded" width="30" src=images/products/product-1-50.png" alt="product">
-                      Headphone Blitz
+                      <img class="mr-3 rounded" width="30" src={{asset('images/products/product-1-50.png')}}" alt="product">
+                      Papu Linces
                     </a>
                   </div>
                   <div class="search-header">
@@ -122,75 +85,34 @@
             <ul class="navbar-nav navbar-right">
               <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
                 <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                  <div class="dropdown-header">Messages
+                  <div class="dropdown-header">Mensajes
                     <div class="float-right">
-                      <a href="#">Mark All As Read</a>
+                      <a href="#">Marcar como Leido</a>
                     </div>
                   </div>
                   <div class="dropdown-list-content dropdown-list-message">
                     <a href="#" class="dropdown-item dropdown-item-unread">
                       <div class="dropdown-item-avatar">
-                        <img alt="image" src="images/avatar/avatar-1.png" class="rounded-circle">
+                        <img alt="image" src="{{asset('images/avatar/avatar-1.png')}}" class="rounded-circle">
                         <div class="is-online"></div>
                       </div>
                       <div class="dropdown-item-desc">
-                        <b>Kusnaedi</b>
-                        <p>Hello, Bro!</p>
-                        <div class="time">10 Hours Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item dropdown-item-unread">
-                      <div class="dropdown-item-avatar">
-                        <img alt="image" src="images/avatar/avatar-2.png" class="rounded-circle">
-                      </div>
-                      <div class="dropdown-item-desc">
-                        <b>Dedik Sugiharto</b>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        <div class="time">12 Hours Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item dropdown-item-unread">
-                      <div class="dropdown-item-avatar">
-                        <img alt="image" src="images/avatar/avatar-3.png" class="rounded-circle">
-                        <div class="is-online"></div>
-                      </div>
-                      <div class="dropdown-item-desc">
-                        <b>Agung Ardiansyah</b>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <div class="time">12 Hours Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-item-avatar">
-                        <img alt="image" src="images/avatar/avatar-4.png" class="rounded-circle">
-                      </div>
-                      <div class="dropdown-item-desc">
-                        <b>Ardian Rahardiansyah</b>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                        <div class="time">16 Hours Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-item-avatar">
-                        <img alt="image" src="images/avatar/avatar-5.png" class="rounded-circle">
-                      </div>
-                      <div class="dropdown-item-desc">
-                        <b>Alfa Zulkarnain</b>
-                        <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                        <div class="time">Yesterday</div>
+                        <b>UwU Onichan 3000</b>
+                        <p>Hola, Onichan!</p>
+                        <div class="time">Hace 10 horas</div>
                       </div>
                     </a>
                   </div>
                   <div class="dropdown-footer text-center">
-                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Ver Todos <i class="fas fa-chevron-right"></i></a>
                   </div>
                 </div>
               </li>
               <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
                 <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                  <div class="dropdown-header">Notifications
+                  <div class="dropdown-header">Notificaciones
                     <div class="float-right">
-                      <a href="#">Mark All As Read</a>
+                      <a href="#">Marcar como Leido</a>
                     </div>
                   </div>
                   <div class="dropdown-list-content dropdown-list-icons">
@@ -199,35 +121,8 @@
                         <i class="fas fa-code"></i>
                       </div>
                       <div class="dropdown-item-desc">
-                        Template update is available now!
-                        <div class="time text-primary">2 Min Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-item-icon bg-info text-white">
-                        <i class="far fa-user"></i>
-                      </div>
-                      <div class="dropdown-item-desc">
-                        <b>You</b> and <b>Dedik Sugiharto</b> are now friends
-                        <div class="time">10 Hours Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-item-icon bg-success text-white">
-                        <i class="fas fa-check"></i>
-                      </div>
-                      <div class="dropdown-item-desc">
-                        <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                        <div class="time">12 Hours Ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <div class="dropdown-item-icon bg-danger text-white">
-                        <i class="fas fa-exclamation-triangle"></i>
-                      </div>
-                      <div class="dropdown-item-desc">
-                        Low disk space. Let's clean it!
-                        <div class="time">17 Hours Ago</div>
+                        Nya ichi ni san Nya arigatou!
+                        <div class="time text-primary">Hace 2 min</div>
                       </div>
                     </a>
                     <a href="#" class="dropdown-item">
@@ -236,12 +131,12 @@
                       </div>
                       <div class="dropdown-item-desc">
                         Bienvenido a TrailBrazer!
-                        <div class="time">Yesterday</div>
+                        <div class="time">Ayer</div>
                       </div>
                     </a>
                   </div>
                   <div class="dropdown-footer text-center">
-                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Ver Todos <i class="fas fa-chevron-right"></i></a>
                   </div>
                 </div>
               </li>
@@ -251,18 +146,19 @@
                 <div class="dropdown-menu dropdown-menu-right">
                   <div class="dropdown-title">Logged in 5 min ago</div>
                   <a href="features-profile.html" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Profile
-                  </a>
-                  <a href="features-activities.html" class="dropdown-item has-icon">
-                    <i class="fas fa-bolt"></i> Activities
+                    <i class="far fa-user"></i> Perfil
                   </a>
                   <a href="features-settings.html" class="dropdown-item has-icon">
-                    <i class="fas fa-cog"></i> Settings
+                    <i class="fas fa-cog"></i> Configuraciones
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="{{route('logout')}}" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                  </a>
+                  <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                   <i class="fas fa-sign-out-alt"></i> Salir
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
               </li>
             </ul>
@@ -277,22 +173,29 @@
               </div>
               <ul class="sidebar-menu">
                 <li class="menu-header">Dashboard</li>
-                <li class="dropdown active">
+                <li class="dropdown">
                   <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 </li>
-                <li class="menu-header">TrailBrazer</li>
-                <li class="dropdown">
-                  <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
-                </li>
-                <li class="dropdown">
-                    <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
-                </li>
-                <li class="dropdown">
-                    <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
-                </li>
-                <li class="dropdown">
-                  <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                </li>
+                @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
+                    <li class="menu-header">TrailBrazer</li>
+                    @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
+                        <li class="dropdown">
+                        <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
+                        </li>
+                    @endif
+                    <li class="dropdown">
+                        <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{route('listaru')}}" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                    </li>
+                    <li class="dropdown active">
+                    <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                    </li>
+                @endif
               <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                 <a href="https://www.youtube.com/watch?v=7q7wAABkdaQ" class="btn btn-primary btn-lg btn-block btn-icon-split">
                   <i class="fas fa-rocket"></i> No Tocar
@@ -302,20 +205,36 @@
           </div>
 
           <!-- Main Content -->
-          <div class="main-content">
-            <section class="section">
-
-
-                <!-- mapa aqui -->
-                <div id="map" style="height: 600px; width: 100%;"></div>
-
-            </section>
-          </div>
-          <footer class="main-footer">
-            <div class="footer-left">
-              Copyright &copy; 2024 <div class="bullet"></div> TrailBrazer
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header">
+                        <!-- Aquí va el mapa -->
+                        <aside id="sidebar-wrapper">
+                            <ul class="sidebar-menu">
+                                <li class="dropdown">
+                                    <a href="#" class="nav-link"><span>Camion 1</span></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="nav-link"><span>Camion-2</span></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="nav-link"><span>Camion-3</span></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="nav-link"><span>Camion-4</span></a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <div id="map"></div>
+                    </div>
+                </section>
             </div>
-          </footer>
+
+    <footer class="main-footer" style="margin-top: 250px;">
+        <div class="footer-left">
+            Copyright &copy; 2024 <div class="bullet"></div> TrailBrazer
         </div>
-      </div>
+    </footer>
+</div>
+</div>
 @endsection

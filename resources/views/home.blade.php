@@ -25,10 +25,31 @@
 
         <div class="collapse navbar-collapse" id="ftco-navbar">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="{{route('login')}}" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Register</a></li>
+                <!-- Si el usuario no está autenticado -->
+                @guest
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                @endguest
+
+                <!-- Si el usuario está autenticado -->
+                @auth
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->nombre }} <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        </div>
+                    </li>
+                @endauth
             </ul>
         </div>
+
+        <!-- Formulario para logout -->
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </nav>
     <!-- END nav -->
 
@@ -186,72 +207,76 @@
     {{-- Parte Subscripciones --}}
 
     <section class="ftco-section bg-light ftco-slant ftco-slant-white" id="section-pricing">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center ftco-animate">
-            <h2 class="text-uppercase ftco-uppercase">Subscripciones</h2>
-            <div class="row justify-content-center mb-5">
-              <div class="col-md-7">
-                <p class="lead">Elige el plan que mejor se adapte a tus necesidades. Ofrecemos diferentes opciones de suscripción para que puedas acceder a nuestras herramientas de monitoreo y seguridad con la flexibilidad que necesitas.</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center ftco-animate">
+              <h2 class="text-uppercase ftco-uppercase">Subscripciones</h2>
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-7">
+                  <p class="lead">Elige el plan que mejor se adapte a tus necesidades. Ofrecemos diferentes opciones de suscripción para que puedas acceder a nuestras herramientas de monitoreo y seguridad con la flexibilidad que necesitas.</p>
+                </div>
               </div>
             </div>
           </div>
+          <!-- END row -->
+
+          @auth
+            <!-- Si el usuario está logeado -->
+            <div class="row">
+              <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
+                <div class="ftco-pricing">
+                  <h2>Estandar</h2>
+                  <p class="ftco-price-per text-center"><sup>$</sup><strong>25</strong><span>/mo</span></p>
+                  <ul class="list-unstyled mb-5">
+                    <li>Far far away behind the word mountains</li>
+                    <li>Even the all-powerful Pointing has no control</li>
+                    <li>When she reached the first hills</li>
+                  </ul>
+                  <p><a href="/checkout" class="btn btn-secondary btn-sm">Get Started</a></p>
+                </div>
+              </div>
+              <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
+                <div class="ftco-pricing">
+                  <h2>Profesional</h2>
+                  <p class="ftco-price-per text-center"><sup>$</sup><strong>75</strong><span>/mo</span></p>
+                  <ul class="list-unstyled mb-5">
+                    <li>Far far away behind the word mountains</li>
+                    <li>Even the all-powerful Pointing has no control</li>
+                    <li>When she reached the first hills</li>
+                  </ul>
+                  <p><a href="/checkout" class="btn btn-secondary btn-sm">Get Started</a></p>
+                </div>
+              </div>
+              <div class="w-100 clearfix d-xl-none"></div>
+              <div class="col-md bg-white  ftco-pricing-popular p-5 m-2 text-center mb-2 ftco-animate">
+                <span class="popular-text">Popular</span>
+                <div class="ftco-pricing">
+                  <h2>Silver</h2>
+                  <p class="ftco-price-per text-center"><sup>$</sup><strong class="text-primary">135</strong><span>/mo</span></p>
+                  <ul class="list-unstyled mb-5">
+                    <li>Far far away behind the word mountains</li>
+                    <li>Even the all-powerful Pointing has no control</li>
+                    <li>When she reached the first hills</li>
+                  </ul>
+                  <p><a href="/checkout" class="btn btn-primary btn-sm">Get Started</a></p>
+                </div>
+              </div>
+              <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
+                <div class="ftco-pricing">
+                  <h2>Platinum</h2>
+                  <p class="ftco-price-per text-center"><sup>$</sup><strong>215</strong><span>/mo</span></p>
+                  <ul class="list-unstyled mb-5">
+                    <li>Far far away behind the word mountains</li>
+                    <li>Even the all-powerful Pointing has no control</li>
+                    <li>When she reached the first hills</li>
+                  </ul>
+                  <p><a href="/checkout" class="btn btn-secondary btn-sm">Get Started</a></p>
+                </div>
+              </div>
+            </div>
+          @endauth
         </div>
-        <!-- END row -->
-        <div class="row">
-          <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
-            <div class="ftco-pricing">
-              <h2>Estandar</h2>
-              <p class="ftco-price-per text-center"><sup>$</sup><strong>25</strong><span>/mo</span></p>
-              <ul class="list-unstyled mb-5">
-                <li>Far far away behind the word mountains</li>
-                <li>Even the all-powerful Pointing has no control</li>
-                <li>When she reached the first hills</li>
-              </ul>
-              <p><a href="#" class="btn btn-secondary btn-sm">Get Started</a></p>
-            </div>
-          </div>
-          <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
-            <div class="ftco-pricing">
-              <h2>Profesional</h2>
-              <p class="ftco-price-per text-center"><sup>$</sup><strong>75</strong><span>/mo</span></p>
-              <ul class="list-unstyled mb-5">
-                <li>Far far away behind the word mountains</li>
-                <li>Even the all-powerful Pointing has no control</li>
-                <li>When she reached the first hills</li>
-              </ul>
-              <p><a href="#" class="btn btn-secondary btn-sm">Get Started</a></p>
-            </div>
-          </div>
-          <div class="w-100 clearfix d-xl-none"></div>
-          <div class="col-md bg-white  ftco-pricing-popular p-5 m-2 text-center mb-2 ftco-animate">
-            <span class="popular-text">Popular</span>
-            <div class="ftco-pricing">
-              <h2>Silver</h2>
-              <p class="ftco-price-per text-center"><sup>$</sup><strong class="text-primary">135</strong><span>/mo</span></p>
-              <ul class="list-unstyled mb-5">
-                <li>Far far away behind the word mountains</li>
-                <li>Even the all-powerful Pointing has no control</li>
-                <li>When she reached the first hills</li>
-              </ul>
-              <p><a href="#" class="btn btn-primary btn-sm">Get Started</a></p>
-            </div>
-          </div>
-          <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
-            <div class="ftco-pricing">
-              <h2>Platinum</h2>
-              <p class="ftco-price-per text-center"><sup>$</sup><strong>215</strong><span>/mo</span></p>
-              <ul class="list-unstyled mb-5">
-                <li>Far far away behind the word mountains</li>
-                <li>Even the all-powerful Pointing has no control</li>
-                <li>When she reached the first hills</li>
-              </ul>
-              <p><a href="#" class="btn btn-secondary btn-sm">Get Started</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
     <section class="ftco-section ftco-slant ftco-slant-light" id="section-about">
       <div class="container">
