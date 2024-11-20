@@ -11,17 +11,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="#" class="nav-link">Inicio</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Novedades</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Suscripciones</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-          </ul>
-        </div>
-
         <div class="collapse navbar-collapse" id="ftco-navbar">
             <ul class="navbar-nav ml-auto">
                 <!-- Si el usuario no está autenticado -->
@@ -95,7 +84,7 @@
         </div>
         <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
             <div class="ftco-pricing">
-            <h2>Profesional</h2>
+            <h2>Silver</h2>
             <p class="ftco-price-per text-center"><sup>$</sup><strong>135</strong><span>/mo</span></p>
             <ul class="list-unstyled mb-5">
                 <li>Característica 1</li>
@@ -107,7 +96,7 @@
         </div>
         <div class="col-md bg-white p-5 m-2 text-center mb-2 ftco-animate">
             <div class="ftco-pricing">
-            <h2>Profesional</h2>
+            <h2>Platinum</h2>
             <p class="ftco-price-per text-center"><sup>$</sup><strong>215</strong><span>/mo</span></p>
             <ul class="list-unstyled mb-5">
                 <li>Característica 1</li>
@@ -128,6 +117,12 @@
                 <input type="text" id="selectedPlan" name="plan" class="form-control" readonly required>
             </div>
             <div class="form-group">
+                <label for="selectedPriceDisplay">Precio</label>
+                <input type="text" id="selectedPriceDisplay" class="form-control" readonly>
+                <!-- Campo oculto para enviar solo el valor numérico -->
+                <input type="hidden" id="selectedPrice" name="price" required>
+            </div>
+            <div class="form-group">
                 <label for="cardNumber">Número de Tarjeta</label>
                 <div class="d-flex gap-2">
                 <input type="text" class="form-control card-number" maxlength="4" required>
@@ -140,8 +135,8 @@
             <div class="form-group">
                 <label>Fecha de Expiración</label>
                 <div class="d-flex gap-2">
-                <input type="text" id="expiryMonth" name="expiry_month" class="form-control" maxlength="2" placeholder="MM" required>
-                <input type="text" id="expiryYear" name="expiry_year" class="form-control" maxlength="2" placeholder="AA" required>
+                    <input type="text" id="expiryMonth" name="expiry_month" class="form-control" maxlength="2" placeholder="MM" required>
+                    <input type="text" id="expiryYear" name="expiry_year" class="form-control" maxlength="2" placeholder="AA" required>
                 </div>
             </div>
             <div class="form-group">
@@ -156,29 +151,48 @@
     </section>
 
     <script>
-    const planNames = {
-        1: 'Estandar',
-        2: 'Profesional',
-    };
+        const planDetails = {
+            1: { name: 'Estandar', displayPrice: '$25 / 1 mes', price: 25 },
+            2: { name: 'Profesional', displayPrice: '$75 / 1 mes', price: 75 },
+            3: { name: 'Silver', displayPrice: '$135 / 1 mes', price: 135 },
+            4: { name: 'Platinum', displayPrice: '$215 / 1 mes', price: 215 },
+        };
 
-    document.querySelectorAll('.select-plan').forEach(button => {
-        button.addEventListener('click', function () {
-        const planId = this.dataset.planId;
-        const planName = planNames[planId] || 'Desconocido';
-        document.getElementById('selectedPlan').value = planName;
-        window.scrollTo(0, document.querySelector('form').offsetTop);
+        // Asignar evento a cada botón de selección
+        document.querySelectorAll('.select-plan').forEach(button => {
+            button.addEventListener('click', function () {
+                const planId = this.dataset.planId;
+                const plan = planDetails[planId];
+
+                if (plan) {
+                    // Mostrar el nombre y el precio formateado en los campos visibles
+                    document.getElementById('selectedPlan').value = plan.name;
+                    document.getElementById('selectedPriceDisplay').value = plan.displayPrice;
+
+                    // Guardar el precio numérico en un campo oculto para enviar al backend
+                    document.getElementById('selectedPrice').value = plan.price;
+                }
+
+                // Desplazar suavemente a la sección del formulario
+                const checkoutFormElement = document.getElementById('checkoutForm');
+                checkoutFormElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
         });
-    });
 
-    document.getElementById('checkoutForm').addEventListener('submit', function (e) {
-        const cardInputs = document.querySelectorAll('.card-number');
-        const cardNumber = Array.from(cardInputs).map(input => input.value).join('');
-        if (cardNumber.length !== 16) {
-        alert('Por favor, ingrese un número de tarjeta válido de 16 dígitos.');
-        e.preventDefault();
-        return;
-        }
-        document.getElementById('cardNumber').value = cardNumber;
-    });
+        // Manejar el envío del formulario
+        document.getElementById('checkoutForm').addEventListener('submit', function (e) {
+            // Consolidar el número de tarjeta de crédito
+            const cardInputs = document.querySelectorAll('.card-number');
+            const cardNumber = Array.from(cardInputs).map(input => input.value).join('');
+            if (cardNumber.length !== 16) {
+                alert('Por favor, ingrese un número de tarjeta válido de 16 dígitos.');
+                e.preventDefault();
+                return;
+            }
+
+            // Asignar el número completo al campo oculto antes de enviar
+            document.getElementById('cardNumber').value = cardNumber;
+        });
     </script>
+
     @endsection
