@@ -40,7 +40,7 @@
               </div>
               <ul class="sidebar-menu">
                 <li class="menu-header">Dashboard</li>
-                <li class="dropdown active">
+                <li class="dropdown">
                   <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 </li>
                 @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
@@ -54,9 +54,9 @@
                         <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
+                        <a href="{{route('listaru')}}" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
                     </li>
                     <li class="dropdown">
