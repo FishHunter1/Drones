@@ -9,11 +9,10 @@ class RutasdController extends Controller
 {
     public function detalle($id)
     {
-        // Busca la ruta con sus relaciones
-        $ruta = Ruta::with(['vehiculo', 'conductor.usuario'])->findOrFail($id);
+        $ruta = Ruta::findOrFail($id);
 
-        // Retorna la vista con los datos de la ruta
         return view('rutas.rutasd', compact('ruta'));
     }
+
 
 }

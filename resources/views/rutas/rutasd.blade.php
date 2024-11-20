@@ -2,6 +2,57 @@
 
 @section('title', 'Lista-Rutas')
 
+@section('customMapScript')
+function initMap() {
+    const geocoder = new google.maps.Geocoder();
+    const directionsService = new google.maps.DirectionsService();
+    const directionsRenderer = new google.maps.DirectionsRenderer();
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: { lat: 7.116816, lng: -73.105240 },
+    });
+
+    directionsRenderer.setMap(map);
+
+    const addressOrigin = "{{ $ruta->ubicacion_inicial }}";
+    const addressDestination = "{{ $ruta->ubicacion_final }}";
+
+    // Geocodificar las direcciones y trazar la ruta
+    geocoder.geocode({ address: addressOrigin }, (results, status) => {
+        if (status === "OK") {
+            const origin = results[0].geometry.location;
+
+            geocoder.geocode({ address: addressDestination }, (results, status) => {
+                if (status === "OK") {
+                    const destination = results[0].geometry.location;
+
+                    directionsService.route(
+                        {
+                            origin: origin,
+                            destination: destination,
+                            travelMode: google.maps.TravelMode.DRIVING,
+                        },
+                        (response, status) => {
+                            if (status === "OK") {
+                                directionsRenderer.setDirections(response);
+                            } else {
+                                console.error("No se pudo trazar la ruta: " + status);
+                            }
+                        }
+                    );
+                } else {
+                    console.error("Error al geocodificar la dirección final: " + status);
+                }
+            });
+        } else {
+            console.error("Error al geocodificar la dirección inicial: " + status);
+        }
+    });
+}
+window.onload = initMap;
+@endsection
+
 @section('content')
 <body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
     <div id="app" class="main-wrapper main-wrapper-1" style="display: flex; flex-direction: column; min-height: 100vh;">
@@ -77,17 +128,23 @@
                     <h1 class="text-primary">Lista de Rutas Asignadas</h1>
                 </div>
                 <div class="section-body">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Detalles de la Ruta</h4>
+                    <div class="card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start;">
+                        <div class="card-details" style="width: 50%; padding-right: 20px;">
+                            <div class="card-header">
+                                <h4>Detalles de la Ruta</h4>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Ubicación Inicial:</strong> {{ $ruta->ubicacion_inicial }}</p>
+                                <p><strong>Ubicación Final:</strong> {{ $ruta->ubicacion_final }}</p>
+                                <p><strong>Hora Inicio:</strong> {{ $ruta->hora_inicio }}</p>
+                                <p><strong>Hora Final:</strong> {{ $ruta->hora_final }}</p>
+                                <p><strong>Vehículo:</strong> {{ $ruta->vehiculo->marca }} ({{ $ruta->vehiculo->placa }})</p>
+                                <p><strong>Conductor:</strong> {{ $ruta->conductor->usuario->nombre }} {{ $ruta->conductor->usuario->apellido }}</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p><strong>Ubicación Inicial:</strong> {{ $ruta->ubicacion_inicial }}</p>
-                            <p><strong>Ubicación Final:</strong> {{ $ruta->ubicacion_final }}</p>
-                            <p><strong>Hora Inicio:</strong> {{ $ruta->hora_inicio }}</p>
-                            <p><strong>Hora Final:</strong> {{ $ruta->hora_final }}</p>
-                            <p><strong>Vehículo:</strong> {{ $ruta->vehiculo->marca }} ({{ $ruta->vehiculo->placa }})</p>
-                            <p><strong>Conductor:</strong> {{ $ruta->conductor->usuario->nombre }} {{ $ruta->conductor->usuario->apellido }}</p>
+                        <div class="card-map" style="width: 50%;">
+                            <h4>Ruta en el Mapa</h4>
+                            <div id="map" style="width: 50%; height: 400px; border: 1px solid #ccc; margin-left: 30px; display: inline-block;"></div>
                         </div>
                     </div>
                 </div>
@@ -102,3 +159,5 @@
     </div>
 </body>
 @endsection
+
+

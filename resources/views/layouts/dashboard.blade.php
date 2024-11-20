@@ -28,7 +28,7 @@
     <!-- Template JS File -->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-    
+
 </head>
 
 <body>
@@ -52,6 +52,9 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKPIAi_xftVsfEB91l0FbEyadWxBzkWgs"></script>
+    <script>
+        @yield('customMapScript')
+    </script>
     <script>
         let map, marker;
 
@@ -86,6 +89,5 @@
         }
     </script>
     @yield('executeMapScript')
-
 </body>
 </html>
