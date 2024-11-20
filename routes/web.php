@@ -18,6 +18,7 @@ use App\Http\Controllers\CrearutaController;
 use App\Http\Controllers\listaruController;
 use App\Http\Controllers\RutasdController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PagosController;
 
 Route::get('/', HomeController::class)->name('home');
 
@@ -81,7 +82,6 @@ Route::get('/dashboard/rutasd', function (){
     return view('rutas.rutasd');
 })->name('rutasd');
 
-
 Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
 
 Route::prefix('/authentication')->group(function () {
@@ -113,4 +113,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'show'])->name('checkout.show');
     Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout');
     Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
+
+    Route::get('/payment-confirmation/{pago}', [PagosController::class, 'showConfirmation'])->name('payment.confirmation');
+    Route::get('/payment-receipt/{pago}', [PagosController::class, 'showReceipt'])->name('payment.receipt');
 });
