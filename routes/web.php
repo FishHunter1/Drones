@@ -106,7 +106,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/crearuta', [CrearutaController::class,'showformol'])->name('crearuta');
     Route::post('/crearuta', [CrearutaController::class,'creara'])->name('Crearuta.creara');
     Route::get('/listaru', [listaruController::class,'indexRutas'])->name('listaru');
-    Route::get('/rutas/{id}', [RutasdController::class, 'detalle'])->name('rutas.detalle');
+    Route::get('/rutasd/{id}', [RutasdController::class, 'detalle'])->name('rutas.detalle');
 });
 
 Route::middleware(['auth'])->group(function () {

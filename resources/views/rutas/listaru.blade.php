@@ -95,18 +95,14 @@
                                 </thead>
                                 <tbody>
                                     @forelse($rutas as $ruta)
-                                        <tr onclick="window.location='{{ route('rutasd', ['id' => $ruta->id]) }}'" style="cursor: pointer;">
-                                            <td>{{ $ruta->ubicacion_inicial }}</td>
-                                            <td>{{ $ruta->ubicacion_final }}</td>
-                                            <td>{{ $ruta->hora_inicio }}</td>
-                                            <td>{{ $ruta->hora_final }}</td>
-                                            <td>
-                                                {{ $ruta->vehiculo ? $ruta->vehiculo->marca . ' (' . $ruta->vehiculo->placa . ')' : 'Sin vehículo' }}
-                                            </td>
-                                            <td>
-                                                {{ $ruta->conductor && $ruta->conductor->usuario ? $ruta->conductor->usuario->nombre . ' ' . $ruta->conductor->usuario->apellido : 'Sin conductor' }}
-                                            </td>
-                                        </tr>
+                                    <tr onclick="window.location='{{ route('rutas.detalle', ['id' => $ruta->id]) }}'" style="cursor: pointer;">
+                                        <td>{{ $ruta->ubicacion_inicial }}</td>
+                                        <td>{{ $ruta->ubicacion_final }}</td>
+                                        <td>{{ $ruta->hora_inicio }}</td>
+                                        <td>{{ $ruta->hora_final }}</td>
+                                        <td>{{ $ruta->vehiculo ? $ruta->vehiculo->marca . ' (' . $ruta->vehiculo->placa . ')' : 'Sin vehículo' }}</td>
+                                        <td>{{ $ruta->conductor && $ruta->conductor->usuario ? $ruta->conductor->usuario->nombre . ' ' . $ruta->conductor->usuario->apellido : 'Sin conductor' }}</td>
+                                    </tr>
                                     @empty
                                         <tr>
                                             <td colspan="6" class="text-center text-muted">No hay rutas registradas.</td>
