@@ -111,11 +111,9 @@
                                 </tbody>
                             </table>
                         </div>
-                        @if(auth()->check() && auth()->user()->role === 'Administrador')
+                        @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
                             <div class="card-footer text-right">
-                                <a href="{{ route('crearuta') }}" class="btn btn-success">
-                                    <i class="fas fa-plus"></i> Agregar Ruta
-                                </a>
+                                <a href="{{ route('crearuta') }}" class="btn btn-success"><i class="fas fa-plus"></i> Agregar Ruta</a>
                             </div>
                         @endif
                     </div>
