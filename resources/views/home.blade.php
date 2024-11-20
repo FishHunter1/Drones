@@ -18,7 +18,9 @@
             <li class="nav-item active"><a href="#section-home" class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="#section-features" class="nav-link">Novedades</a></li>
             <li class="nav-item"><a href="#section-services" class="nav-link">Servicios</a></li>
-            <li class="nav-item"><a href="#section-pricing" class="nav-link">Suscripciones</a></li>
+            @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
+                <li class="nav-item"><a href="#section-pricing" class="nav-link">Suscripciones</a></li>
+            @endif
             <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
           </ul>
         </div>
@@ -205,7 +207,7 @@
 
 
     {{-- Parte Subscripciones --}}
-
+    @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
     <section class="ftco-section bg-light ftco-slant ftco-slant-white" id="section-pricing">
         <div class="container">
           <div class="row">
@@ -277,7 +279,7 @@
           @endauth
         </div>
       </section>
-
+      @endif
     <section class="ftco-section ftco-slant ftco-slant-light" id="section-about">
       <div class="container">
 

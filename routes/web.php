@@ -15,6 +15,8 @@ use App\Http\Controllers\ReportesMController;
 use App\Http\Controllers\ReportesIController;
 use App\Http\Controllers\MapaController;
 use App\Http\Controllers\CrearutaController;
+use App\Http\Controllers\listaruController;
+use App\Http\Controllers\RutasdController;
 use App\Http\Controllers\CheckoutController;
 
 Route::get('/', HomeController::class)->name('home');
@@ -75,6 +77,10 @@ Route::get('/dashboard/crearuta', function (){
     return view('rutas.crearuta');
 })->name('crearuta');
 
+Route::get('/dashboard/rutasd', function (){
+    return view('rutas.rutasd');
+})->name('rutasd');
+
 
 Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
 
@@ -97,8 +103,10 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/listr', [ListrController::class,'indexr'])->name('listr');
     Route::get('/mapa', [MapaController::class, 'showMapa'])->name('mapa');
     Route::get('/ubicacion', [MapaController::class, 'getUbicacionVehiculo'])->name('ubicacion');
-    Route::get('/crearuta', [CrearutaController::class,'showformo'])->name('crearuta');
-    Route::post('/crearuta', [CrearutaController::class,'creaturax'])->name('Crearuta.creaturax');
+    Route::get('/crearuta', [CrearutaController::class,'showformol'])->name('crearuta');
+    Route::post('/crearuta', [CrearutaController::class,'creara'])->name('Crearuta.creara');
+    Route::get('/listaru', [listaruController::class,'indexRutas'])->name('listaru');
+    Route::get('/rutas/{id}', [RutasdController::class, 'detalle'])->name('rutas.detalle');
 });
 
 Route::middleware(['auth'])->group(function () {

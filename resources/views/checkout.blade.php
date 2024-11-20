@@ -14,18 +14,34 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="#section-home" class="nav-link">Inicio</a></li>
-            <li class="nav-item"><a href="#section-features" class="nav-link">Novedades</a></li>
-            <li class="nav-item"><a href="#section-services" class="nav-link">Servicios</a></li>
-            <li class="nav-item"><a href="#section-pricing" class="nav-link">Suscripciones</a></li>
-            <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
+            <li class="nav-item active"><a href="#" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Novedades</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Suscripciones</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
           </ul>
         </div>
 
         <div class="collapse navbar-collapse" id="ftco-navbar">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="{{route('login')}}" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Register</a></li>
+                <!-- Si el usuario no está autenticado -->
+                @guest
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+                @endguest
+
+                <!-- Si el usuario está autenticado -->
+                @auth
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->nombre }} <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        </div>
+                    </li>
+                @endauth
             </ul>
         </div>
     </nav>

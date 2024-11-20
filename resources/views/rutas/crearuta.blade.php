@@ -42,7 +42,7 @@
                   </div>
                   <ul class="sidebar-menu">
                     <li class="menu-header">Dashboard</li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                     </li>
                     @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
@@ -55,7 +55,7 @@
                         <li class="dropdown">
                             <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="{{route('listaru')}}" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
                         </li>
                         <li class="dropdown">
@@ -87,14 +87,14 @@
                                     <h4>Formulario para el registro de rutas</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('Crearuta.creaturax') }}" method="POST">
+                                    <form action="{{ route('Crearuta.creara') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="ubicacion_inicial">Descripcion del Incidente</label>
-                                            <input type="text" name="descripcion" id="ubicacion_inicial" class="form-control" placeholder="Ingresa la ubicacion inicial" required>
+                                            <label for="ubicacion_inicial">Ubicacion Inicial</label>
+                                            <input type="text" name="ubicacion_inicial" id="ubicacion_inicial" class="form-control" placeholder="Ingresa la ubicacion inicial" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="ubicacion_final">Reporte de daños</label>
+                                            <label for="ubicacion_final">Ubicacion Final</label>
                                             <input type="text" name="ubicacion_final" id="ubicacion_final" class="form-control" placeholder="Ingresa la ubicacion final" required>
                                         </div>
                                         <div class="form-group">
@@ -123,7 +123,6 @@
                                                 @endforeach
                                             </select>
                                         </div>
-
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Registrar la Ruta</button>
                                         </div>

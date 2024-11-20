@@ -24,8 +24,6 @@ class Vehiculo extends Model
         'admin_id'
     ];
 
-
-
     public function admin()
     {
         return $this->belongsTo(Usuario::class, 'admin_id');

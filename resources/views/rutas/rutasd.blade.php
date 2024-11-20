@@ -79,49 +79,16 @@
                 <div class="section-body">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Rutas Asignadas</h4>
+                            <h4>Detalles de la Ruta</h4>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped table-bordered rounded-lg shadow-lg">
-                                <thead class="bg-primary text-white">
-                                    <tr>
-                                        <th class="p-3 border-b border-gray-300 rounded-tl-lg">Ubicación Inicial</th>
-                                        <th class="p-3 border-b border-gray-300">Ubicación Final</th>
-                                        <th class="p-3 border-b border-gray-300">Hora Inicio</th>
-                                        <th class="p-3 border-b border-gray-300">Hora Final</th>
-                                        <th class="p-3 border-b border-gray-300">Vehículo</th>
-                                        <th class="p-3 border-b border-gray-300">Conductor</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($rutas as $ruta)
-                                        <tr onclick="window.location='{{ route('rutasd', ['id' => $ruta->id]) }}'" style="cursor: pointer;">
-                                            <td>{{ $ruta->ubicacion_inicial }}</td>
-                                            <td>{{ $ruta->ubicacion_final }}</td>
-                                            <td>{{ $ruta->hora_inicio }}</td>
-                                            <td>{{ $ruta->hora_final }}</td>
-                                            <td>
-                                                {{ $ruta->vehiculo ? $ruta->vehiculo->marca . ' (' . $ruta->vehiculo->placa . ')' : 'Sin vehículo' }}
-                                            </td>
-                                            <td>
-                                                {{ $ruta->conductor && $ruta->conductor->usuario ? $ruta->conductor->usuario->nombre . ' ' . $ruta->conductor->usuario->apellido : 'Sin conductor' }}
-                                            </td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="6" class="text-center text-muted">No hay rutas registradas.</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
+                            <p><strong>Ubicación Inicial:</strong> {{ $ruta->ubicacion_inicial }}</p>
+                            <p><strong>Ubicación Final:</strong> {{ $ruta->ubicacion_final }}</p>
+                            <p><strong>Hora Inicio:</strong> {{ $ruta->hora_inicio }}</p>
+                            <p><strong>Hora Final:</strong> {{ $ruta->hora_final }}</p>
+                            <p><strong>Vehículo:</strong> {{ $ruta->vehiculo->marca }} ({{ $ruta->vehiculo->placa }})</p>
+                            <p><strong>Conductor:</strong> {{ $ruta->conductor->usuario->nombre }} {{ $ruta->conductor->usuario->apellido }}</p>
                         </div>
-                        @if(auth()->check() && auth()->user()->role === 'Administrador')
-                            <div class="card-footer text-right">
-                                <a href="{{ route('crearuta') }}" class="btn btn-success">
-                                    <i class="fas fa-plus"></i> Agregar Ruta
-                                </a>
-                            </div>
-                        @endif
                     </div>
                 </div>
             </section>

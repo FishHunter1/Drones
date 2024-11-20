@@ -12,6 +12,7 @@ class CreateRutasTable extends Migration
             $table->id();
             $table->foreignId('vehiculo_id')->nullable()->constrained('vehiculos')->onDelete('set null');
             $table->foreignId('conductor_id')->nullable()->constrained('conductores')->onDelete('set null');
+            $table->foreignId('admin_id')->constrained('usuarios')->onDelete('cascade');
             $table->string('ubicacion_inicial');
             $table->string('ubicacion_final');
             $table->datetime('hora_inicio');

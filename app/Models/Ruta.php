@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,8 +8,6 @@ class Ruta extends Model
 {
     use HasFactory;
 
-    protected $table = 'rutas';
-
     protected $fillable = [
         'ubicacion_inicial',
         'ubicacion_final',
@@ -18,17 +15,21 @@ class Ruta extends Model
         'hora_final',
         'vehiculo_id',
         'conductor_id',
+        'admin_id', // Asegúrate de incluir esta columna
     ];
 
-    // Relación con vehículo
     public function vehiculo()
     {
         return $this->belongsTo(Vehiculo::class, 'vehiculo_id');
     }
 
-    // Relación con conductor
     public function conductor()
     {
         return $this->belongsTo(Conductor::class, 'conductor_id');
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo(Usuario::class, 'admin_id');
     }
 }
