@@ -82,6 +82,10 @@ Route::get('/dashboard/rutasd', function (){
     return view('rutas.rutasd');
 })->name('rutasd');
 
+Route::get('/dashboard/drones', function (){
+    return view('drones.drones');
+})->name('drones');
+
 Route::get('/dashboard', [DashboardController::class, 'indexado'])->name('dashboard');
 
 Route::prefix('/authentication')->group(function () {

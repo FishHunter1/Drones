@@ -174,21 +174,24 @@
                 @if(auth()->check() && in_array(auth()->user()->rol->nombre, ['Administrador', 'Conductor']))
                     <li class="menu-header">TrailBrazer</li>
                     @if(auth()->check() && auth()->user()->rol->nombre == 'Administrador')
-                        <li class="dropdown">
+                      <li class="dropdown">
                         <a href="{{route('liste')}}" class="nav-link"><i class="fa fa-user"></i> <span>Empleados</span></a>
-                        </li>
+                      </li>
                     @endif
                     <li class="dropdown">
-                        <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
+                      <a href="{{route('listc')}}" class="nav-link" data-tooggle="dropdown"><i class="fa fa-truck"></i> <span>Camiones</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="{{route('listaru')}}" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
+                      <a href="{{route('listaru')}}" class="nav-link" data-tooggle="dropdown"><i class="fas fa-route"></i> <span>Rutas</span></a>
                     </li>
                     <li class="dropdown">
-                        <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
+                      <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
                     </li>
                     <li class="dropdown">
-                    <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
+                      <a href="{{route('drones')}}" class="nav-link"><i class="fas fa-plane"></i> <span>Drones</span></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
                     </li>
                 @endif
               <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

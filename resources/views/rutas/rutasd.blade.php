@@ -111,6 +111,9 @@ window.onload = initMap;
                         <a href="{{route('listr')}}" class="nav-link" data-tooggle="dropdown"><i class="far fa-file-alt"></i> <span>Reportes</span></a>
                     </li>
                     <li class="dropdown">
+                        <a href="{{route('drones')}}" class="nav-link"><i class="fas fa-plane"></i> <span>Drones</span></a>
+                    </li>
+                    <li class="dropdown">
                     <a href="{{route('mapa')}}" class="nav-link"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
                     </li>
                 @endif
